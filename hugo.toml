@@ -1,0 +1,18 @@
+baseURL = "https://runzhou.github.io/blog/" 
+languageCode = "en-us"
+title = "RZ's Blog"
+theme = "PaperMod"
+
+[params]
+  [params.homeInfoParams]
+    Title = "Hi, Shel's here. Who's there?"
+    Content = " This is Shel (Run) Zhou. This is my learning hub. I learn new things through both building and thinking. In my leisure time, I love 🎾, 🏃‍♀️, 📻, 📖, 🎨, ✈️, 🐶."
+
+  [[params.socialIcons]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/runz/"
+
+  [[params.socialIcons]]
+    name = "Github"
+    url = "https://github.com/runrunicd"
+
