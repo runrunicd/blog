@@ -1,12 +1,12 @@
-baseURL = "https://runzhou.github.io/blog/" 
+baseURL = "https://runrunicd.github.io/blog/" 
 languageCode = "en-us"
-title = "RZ's Blog"
+title = "Shel (Run) Zhou's Blog"
 theme = "PaperMod"
 
 [params]
   [params.homeInfoParams]
     Title = "Hi, Shel's here. Who's there?"
-    Content = " This is Shel (Run) Zhou. This is my learning hub. I learn new things through both building and thinking. In my leisure time, I love 🎾, 🏃‍♀️, 📻, 📖, 🎨, ✈️, 🐶."
+    Content = " This is my learning hub. I learn new things through both building and thinking. In my leisure time, I love 🎾, 🏃‍♀️, 📻, 📖, 🎨, ✈️, 🐶."
 
   [[params.socialIcons]]
     name = "LinkedIn"
