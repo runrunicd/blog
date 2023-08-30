@@ -111,6 +111,8 @@ When building the framework and fine-tuning the LLM, I began to consider how thi
 [1] 
 
 ## Next Steps
-- Exploration of LoRa in excelerating fine-tuning
 - The impacts of other parameters in fine-tuning on model performance (e.g. learning rate)
+- Investigate misclassified samples to gather insights about data collection & quality
+- Exploration of LoRa in excelerating fine-tuning
+
 
