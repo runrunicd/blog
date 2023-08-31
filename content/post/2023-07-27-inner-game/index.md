@@ -1,0 +1,25 @@
+---
+title: "The Inner Game"
+date: 2023-07-27T17:00:01-07:00
+draft: false
+tags: ['psychology', 'self-parenting', 'self-love', 'growth']
+categories: ['life']
+---
+
+#### 🔖 Two Worlds
+The calendar years 2022 - 2023 are the milestones for my spiritual growth. I feel and see that there are two systems. The visible one is created by human beings over ages, where everyone sort of finds a path to follow. This path is designed with rules. The second world is invisible, but I feel that it is grander and is related to the reason why I came into this world.
+
+
+#### 🔖 The Meaning of Life
+In the past, I was always contemplating the meaning of life, wanting to find a task or career to pour my passion into. Now I find that life seemingly has no inherent meaning; the meaning of life seems to be in learning how to give it meaning. Finding meaning in everything requires cultivating a certain ability. I've felt a lot of things; I can't help but think. I want to embrace painful experiences to learn something, knowledge that isn't found in books. I read, I think, I understand, and I discover that the ancients have already written about their insights and knowledge. One day, I had a dream where I was burrowing into an onion, peeling its layers one by one, only to find out that there was no core. I was startled; I felt like I had touched the void, but the next minute I suddenly realized that I love life. I love life incredibly; I want to create, I want to experience, I want to love, I want to be in nature, I want the simple joy of eating ice cream. In an instant, the feeling of boundless emptiness compressed to the present moment, and an epiphany about cherishing the present suddenly arose!
+
+Back in the real world, pain arises from the subjective judgments of gains and losses; if the present moment is the only reality, giving meaning to it, if we can constantly refine ourselves to convert each moment into some form of 'gain,' whether external or internal, then life will become increasingly expansive.
+
+#### 🔖 The Relationship Between Knowledge and Wisdom
+Knowledge is the projection of wisdom. Wisdom comes from the God through gifts - the experiences and reflection.
+
+#### 🔖 Big Love
+I completed a 6-month coach training program, where I listened to and shared many insights and concerns. I began to experience real love and the connections between people, transcending race, culture, age, and social status. I have a strong feeling and epiphany: life unfolds and expands through love. If the universe supports our expansion, then the universe must be love. It's as if I've found the key to unlocking the door of the universe. I'm not entirely clear on this yet. I need to go back to life to observe, experience, and practice it.
+
+#### 🔖 Enjoy The Pain
+Respond to pain with a passionate kiss. I'm grateful for my simple and wonderful childhood, and also thankful for the growing pains of life; they are gifts bestowed by fate.
