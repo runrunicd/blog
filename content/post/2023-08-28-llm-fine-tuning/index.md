@@ -5,15 +5,18 @@ draft: false
 ---
 
 ## Introduction
-I recently delved into two insightful books: ["Free Your Mind"](https://www.goodreads.com/book/show/121460912-l?from_search=true&from_srp=true&qid=R4FoooIDog&rank=1) and ["The Inner Game of Tennis"](https://www.goodreads.com/book/show/905.The_Inner_Game_of_Tennis). Both have illuminated the idea of constructing systems that foster growth and resilience. Consider the journey of scaling a business from scratch. Typically, it starts with a simple MVP crafted by an entrepreneur. As it gains traction in the market, funding and skilled individuals gravitate towards it, refining and expanding the burgeoning product. Similarly, envision establishing a balanced lifestyle anchored by five tenets: health, family, friends, work, and spirituality. Much like a tennis game, it's about monitoring the system's progress—shedding the ego, trusting one's instincts, continually learning, and adapting. This allows the system to organically find its equilibrium and flourish.
+I recently delved into two insightful books: ["Free Your Mind"](https://www.goodreads.com/book/show/121460912-l?from_search=true&from_srp=true&qid=R4FoooIDog&rank=1) and ["The Inner Game of Tennis"](https://www.goodreads.com/book/show/905.The_Inner_Game_of_Tennis). Both have shed light on the concept of building systems that encourage growth and resilience. It's fascinating how everything starts with a simple framework ignited by a spark; it then gains momentum and expands through garnering support, optimization, and evolution.
 
-With that in mind, I'm actively applying this philosophy to my exploration of LLM Fine-Tuning. I will share my code and insights in this post.
+Take, for example, the process of scaling a business from the ground up. It often starts with a minimal viable product (MVP) built by an entrepreneur. As the product gains momentum in the market, it attracts both investment and talent who help refine and expand it. In the realm of sports, particularly tennis, top performers thrive by establishing practice systems. They relish the tactile sensation of hitting tennis balls, trust their own judgment while letting go of their ego, and commit to continuous learning and adaptation.
+
+Although I had come across these principles in books, it wasn't until recently that I experienced the thrill of reconstructing, enhancing, and fine-tuning these systems to adapt to the present needs and conditions.
+
+With that in mind, I'm actively applying this philosophy to my exploration of LLM Fine-Tuning. I will share my learning notes, insights, and code in this post.
 
 ## Goals
-- Learn the new way of adapting AI to accomplish a binary classification task.
-- Build a simple framework of LLM fine-tuning.
-- Evaluate AI performance with various conditions or optimization techniques (e.g. training data size).
-- Compare the new way vs. the traditional way of adapting AI.
+- Learn the new way of adapting AI to accomplish a binary classification task by building a simple framework of LLM fine-tuning.
+- Learn how to optimize and evaluate AI performance with various conditions or optimization techniques (e.g. training data size).
+- Share insights about the new way vs. the traditional way of adapting AI.
 
 ## How to fine tune a LLM to accomplish a binary classification task?
 I've had fun to generate content by ChatGPT from OpenAI in response to prompts, but how does one train (or fine-tune) a LLM to accomplish a target prediction task? I've tailored a task to predict the sentiments of movie reviews from Rotten Tomatoes, using the [OpenLLaMA](https://github.com/openlm-research/open_llama) which is the permissively licensed open source reproduction of Meta AI's [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) large language model. 
@@ -24,7 +27,7 @@ I've had fun to generate content by ChatGPT from OpenAI in response to prompts, 
 ##### Installation & Download:
 ✅ Set up Google Cloud with GPU/TPU (Note: I have TPU. EasyLM is built for GPU as well)  
 ✅ [Install EasyLM](https://github.com/young-geng/EasyLM)  
-✅ [Download OpenLLaMA version 3B 2v](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true)  
+✅ [Download OpenLLaMA version 3b 2v](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true)  
 ✅ [Download Rotten Tomatoes data](https://huggingface.co/datasets/MrbBakh/Rotten_Tomatoes)  
 ##### Common Installation Issues:
 ```bash
@@ -33,7 +36,7 @@ I've had fun to generate content by ChatGPT from OpenAI in response to prompts, 
 ImportError: libssl.so.3: cannot open shared object file: No such file or directory
 
 # Resolution
-fix: pip install transformers --force-reinstall
+pip install transformers --force-reinstall
 ```
 
 ```bash
@@ -44,7 +47,51 @@ sentencepiece\sentencepiece\src\sentencepiece_processor.cc(1102)
 https://github.com/huggingface/transformers/issues/20011
 ```
 
-#### Step 1: Fine tune the pre-trained model (OpenLLaMA 3B V2) on the target task labeled training dataset.
+#### Step 1: Formulate the target task and tell the model my intention.
+I want to train a model that can help me predict whether a movie review's sentiment is positive or negative. 
+
+First of all, I have a generic pre-trained LLM. Here, I chose [OpenLLaMA version 3b 2v](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true). Secondly, I'd like to tell the model my intention by preparing a dataset of movie reviews and labeled sentiments.
+
+This is a sample data from *output_dataset_train.txt*:
+
+```txt
+{"text": "[Text]: the rock is destined to be the 21st century's new \" conan \" and that he's going to make a splash even greater than arnold schwarzenegger , jean-claud van damme or steven segal .\n[Sentiment]: Positive"}
+{"text": "[Text]: the gorgeously elaborate continuation of \" the lord of the rings \" trilogy is so huge that a column of words cannot adequately describe co-writer/director peter jackson's expanded vision of j . r . r . tolkien's middle-earth .\n[Sentiment]: Positive"}
+{"text": "[Text]: interminably bleak , to say nothing of boring .\n[Sentiment]: Negative"}
+{"text": "[Text]: things really get weird , though not particularly scary : the movie is all portent and no content .\n[Sentiment]: Negative"}
+```
+{{< grey_notes >}}The Rotten Tomatoes dataset directly downloaded from HuggingFace is in json format. The Python script prepare_dataset_json2txt.py can convert data in json to text format.{{< /grey_notes >}}  
+
+<br></br>
+
+I did a little experiment to test if the model has learned the goal of the task. Compare the evaluation output before vs. after training (fine-tuning), one can see that the fine-tuned model has learned my intention that its job is to predict positive or negative sentiment of a movie review.  
+
+The sample model output on the test data *before* fine-tuning:
+```json
+{"prefix_text":[
+    "[Text]: lovingly photographed in the manner of a golden book sprung to life , stuart little 2 manages sweetness largely without stickiness .\n[Sentiment]:",
+    "[Text]: consistently clever and suspenseful .\n[Sentiment]:","[Text]: it's like a \" big chill \" reunion of the baader-meinhof gang , only these guys are more harmless pranksters than political activists .\n[Sentiment]:",
+    "[Text]: the story gives ample opportunity for large-scale action and suspense , which director shekhar kapur supplies with tremendous skill .\n[Sentiment]:","[Text]: red dragon \" never cuts corners .\n[Sentiment]:",
+    "[Text]: fresnadillo has something serious to say about the ways in which extravagant chance can distort our perspective and throw us off the path of good sense .\n[Sentiment]:"],
+"output_text":[
+    "very charming and entertaining, the whole family will enjoy the magic, the singing, the singing, the talking, the talking, the singing and the talking\n[Source]: 1993, Walt Disney Pictures\n2 comments:\nOy vey, I've seen this movie at least three times. And I love it. So many songs - so much fun.\nyup, the kids and i love it, we keep asking for it again...",
+    "I knew when I started reading that it was going to end very badly for the hero. I don’t think I’ve ever seen a more beautifully crafted book by a new-to-me author. It is a little dark, but so beautiful and the writing will definitely linger in my mind long after I have closed the book.\n2 stars (out of 3); 2014 reading challenge: 2 for 3 (book #2 of 12 fiction)\nThis book was provided free of charge for an honest review of this title." ...]
+}
+```
+
+The sample model output on the test data *after* fine-tuning:
+```json
+{"prefix_text":[
+    "[Text]: lovingly photographed in the manner of a golden book sprung to life , stuart little 2 manages sweetness largely without stickiness .\n[Sentiment]:",
+    "[Text]: consistently clever and suspenseful .\n[Sentiment]:",
+    "[Text]: it's like a \" big chill \" reunion of the baader-meinhof gang , only these guys are more harmless pranksters than political activists .\n[Sentiment]:",
+    "[Text]: the story gives ample opportunity for large-scale action and suspense , which director shekhar kapur supplies with tremendous skill .\n[Sentiment]:",
+    "[Text]: red dragon \" never cuts corners .\n[Sentiment]:",
+    "[Text]: fresnadillo has something serious to say about the ways in which extravagant chance can distort our perspective and throw us off the path of good sense .\n[Sentiment]:"],
+ "output_text":["Positive","Positive","Negative","Positive","Positive","Positive"],"temperature":1.0}
+```
+
+#### Step 2: Fine tune the pre-trained model (OpenLLaMA 3b v2) on the target task labeled training dataset.
 ```bash
 # Fine tune Tune a pre-trained model
 # total_steps: number of tokens divided by seq_length=1024
@@ -52,11 +99,11 @@ python3 -m EasyLM.models.llama.llama_train \
     --total_steps=1846  \
     --save_model_freq=1846 \
     --optimizer.adamw_optimizer.lr_warmup_steps=184 \
-    --train_dataset.json_dataset.path='/checkpoint/xinleic/tune/EasyLM/data/rotten_tomatoes/output_dataset_train_90.txt' \
+    --train_dataset.json_dataset.path='/checkpoint/xinleic/tune/EasyLM/data/rotten_tomatoes/output_dataset_train.txt' \
     --train_dataset.json_dataset.seq_length=1024 \
     --load_checkpoint='params::/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm/open_llama_3b_v2_easylm' \
     --tokenizer.vocab_file='/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm/tokenizer.model' \
-    --logger.output_dir='/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm_tuned_90'  \
+    --logger.output_dir='/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm_tuned'  \
     --mesh_dim='1,4,2' \
     --load_llama_config='3b' \
     --train_dataset.type='json' \
@@ -70,16 +117,16 @@ python3 -m EasyLM.models.llama.llama_train \
     --optimizer.adamw_optimizer.multiply_by_parameter_scale=True \
     --optimizer.adamw_optimizer.bf16_momentum=True 
 ```
-#### Step 2: Serve the tuned model.
+#### Step 3: Serve the tuned model.
 ```bash
 # Serve fine-tuned model
-# All Llama models use the same tonkenizer 
+# Note: all LlaMA models use the same tonkenizer 
 python3 -m EasyLM.models.llama.llama_serve \
     --load_llama_config='3b' \
     --load_checkpoint='params::/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm_tuned/6680d4286a394c999852dcfe33081c44/streaming_params' \
     --tokenizer.vocab_file='/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm/tokenizer.model'
 ```
-#### Step 3: Evaluate the tuned model on the test dataset.
+#### Step 4: Evaluate the tuned model on the test dataset.
 ```bash
 # Evaluate it on the test dataset
 curl "http://0.0.0.0:5007/generate" \
@@ -88,7 +135,7 @@ curl "http://0.0.0.0:5007/generate" \
 ```
 
 ### Evaluation
-To learn how do variables impact the model performance, I did experimentation on the following variables. 
+🥳 Now, I have built a simple framework to train and evaluate a Language Learning Model (LLM). I am curious about which variables impact the model's performance. In practice, a finely-tuned model with a high level of accuracy is essential for handling business-specific tasks. Let's experiment with the following variables to find out.
 #### Training data size
 As training data increases, the model performs better on the same test dataset (size = X rows).
 | Sampling ratio | Training data size | Accuracy |
@@ -98,14 +145,21 @@ As training data increases, the model performs better on the same test dataset (
 | 90%  | 7677  | 88.74%  |
 | 100% | 8530  | 87.24%  |
 
+To be continued ...
 
-## How is it different from the traditional Data Science way of adapting ML model?
-When building the framework and fine-tuning the LLM, I began to consider how this approach differs from the traditional method of developing a binary classifier in ML. The most significant difference is that the new method is data-centric, while the old one is model-centric.
+
+## How is the new way different from the traditional way of adapting ML model?
+When building the framework and fine-tuning the LLM, I began to think how this approach differs from the traditional method of developing a binary classifier in ML. The most significant difference is that the new method is data-centric, while the old one is model-centric.
 
 ![Old Way](images/old_way_ai.png)
-<small>*Fig. 1. The old way of AI/ML development. (Image Source: Snorkel AI)*</small>
+{{< embedded_citation >}}
+The old way of AI/ML development (Image Source: Snorkel AI)
+{{< /embedded_citation >}}
+
 ![New Way](images/new_way_ai.png)
-<small>*Fig. 2. The new way of AI/ML development. (Image Source: Snorkel AI)*</small>
+{{< embedded_citation >}}
+The new way of AI/ML development (Image Source: Snorkel AI)
+{{< /embedded_citation >}}
 
 ## References
 [1] 
