@@ -2,6 +2,8 @@
 title: "A Simple Framework for LLM Fine-Tuning on TPU & Some Insights"
 date: 2023-08-28T21:34:17-07:00
 draft: false
+tags: ["large-language-model"]
+categories: ["AI/ML"]
 ---
 
 ## Introduction
