@@ -20,18 +20,26 @@ With that in mind, I'm actively applying this philosophy to my exploration of LL
 - Learn how to optimize and evaluate AI performance with various conditions or optimization techniques (e.g. training data size).
 - Share insights about the new way vs. the traditional way of adapting AI.
 
-## How to fine tune a LLM to accomplish a binary classification task?
+## How to fine tune an AI Model (LLM) to accomplish a binary classification task?
 I've had fun to generate content by ChatGPT from OpenAI in response to prompts, but how does one train (or fine-tune) a LLM to accomplish a target prediction task? I've tailored a task to predict the sentiments of movie reviews from Rotten Tomatoes, using the [OpenLLaMA](https://github.com/openlm-research/open_llama) which is the permissively licensed open source reproduction of Meta AI's [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) large language model. 
+
+*AI models*
+- GPT-4 (OpenAI): [white papaer](https://arxiv.org/abs/2303.08774)
+- LLaMA 2 (Meta AI): [white paper](https://arxiv.org/abs/2307.09288)
+- Claude (Anthropic)
+- LaMDA (Google)
+- PaLM (Google)
+- Gopher (DeepMind)
 
 ### A simple framework
 
 #### Setup: The following resources are helpful in accomplishing the task.
-##### Installation & Download:
+##### Installation & download:
 ✅ Set up Google Cloud with GPU/TPU (Note: I have TPU. EasyLM is built for GPU as well)  
 ✅ [Install EasyLM](https://github.com/young-geng/EasyLM)  
 ✅ [Download OpenLLaMA version 3b 2v](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true)  
 ✅ [Download Rotten Tomatoes data](https://huggingface.co/datasets/MrbBakh/Rotten_Tomatoes)  
-##### Common Installation Issues:
+##### Common installation issues:
 ```bash
 # Error
 # https://github.com/huggingface/transformers/issues/19844#issue-1421007669
@@ -93,7 +101,7 @@ The sample model output on the test data *after* fine-tuning:
  "output_text":["Positive","Positive","Negative","Positive","Positive","Positive"],"temperature":1.0}
 ```
 
-#### Step 2: Fine tune the pre-trained model (OpenLLaMA 3b v2) on the target task labeled training dataset.
+#### Step 2: Fine tune the pre-trained model on the target task labeled training dataset.
 ```bash
 # Fine tune Tune a pre-trained model
 # total_steps: number of tokens divided by seq_length=1024
@@ -135,19 +143,77 @@ curl "http://0.0.0.0:5007/generate" \
 -H "Content-Type: application/json" \
 -X POST --data-binary @/checkpoint/xinleic/tune/EasyLM/data/rotten_tomatoes/eval_output_dataset_test.json | tee /checkpoint/xinleic/tune/EasyLM/data/rotten_tomatoes/eval_output_dataset_test_a4tune.json
 ```
+<br></br>
 
-### Evaluation
-🥳 Now, I have built a simple framework to train and evaluate a Language Learning Model (LLM). I am curious about which variables impact the model's performance. In practice, a finely-tuned model with a high level of accuracy is essential for handling business-specific tasks. Let's experiment with the following variables to find out.
+### How to improve accuracy
+🥳 Now, I have built a simple framework to train and evaluate a Language Learning Model (LLM). I am curious about which variables impact the model's performance. In practice, a finely-tuned model with a high level of accuracy is essential for handling business-specific tasks. Let's experiment with the following variables to find out.  
+
 #### Training data size
-As training data increases, the model performs better on the same test dataset (size = X rows).
+<span style="background-color: #FFDAB9"> The larger the training data set, the better the model performs. </span>
 | Sampling ratio | Training data size | Accuracy |
 |---------|---------|---------|
 | 50%  | 4265  | 50.00%  |
 | 70%  | 5971  | 83.40%  |
 | 90%  | 7677  | 88.74%  |
-| 100% | 8530  | 87.24%  |
+| 100% | 8530  | 87.24%  |  
+
+
+#### Training data label quality
+<span style="background-color: #FFDAB9">Human subjective judgments are injected into the training dataset, thereby affecting the performance of the model.</span>  
+
+Is the label from the original dataset considered the ground truth? If so, it's worth noting that there may be bias involved, as the sentiment of a movie review being categorized as 'positive' or 'negative' can be subjective. 
+
+To understand how the original labels differ from my judgment, I selected 30 movie reviews. I then recalculated the accuracy, using my judgment as the new ground truth, to evaluate the impact of human curation of data labels on model performance. The comparison results are as follows. 
+
+*Selected 30 data samples and they reviewed by me:*
+
+<div style="width: 100%; max-height: 400px; overflow: auto; border: 1px solid #ccc; font-size: 12px;;">
+
+Text|Sentiment (Original)|Sentiment (LLM)|Sentiment (Mine)
+|---------|---------|---------|---------|
+lovingly photographed in the manner of a golden book sprung to life , stuart little 2 manages sweetness largely without stickiness .|Positive|Positive|Positive
+consistently clever and suspenseful .|Positive|Positive|Positive
+it's like a " big chill " reunion of the baader-meinhof gang , only these guys are more harmless pranksters than political activists .|Positive|Negative|Positive
+the story gives ample opportunity for large-scale action and suspense , which director shekhar kapur supplies with tremendous skill .|Positive|Positive|Positive
+red dragon " never cuts corners .|Positive|Positive|Positive
+fresnadillo has something serious to say about the ways in which extravagant chance can distort our perspective and throw us off the path of good sense .|Positive|Positive|Positive
+throws in enough clever and unexpected twists to make the formula feel fresh .|Positive|Positive|Positive
+weighty and ponderous but every bit as filling as the treat of the title .|Positive|Positive|Positive
+a real audience-pleaser that will strike a chord with anyone who's ever waited in a doctor's office , emergency room , hospital bed or insurance company office .|Positive|Positive|Positive
+generates an enormous feeling of empathy for its characters .|Positive|Positive|Positive
+exposing the ways we fool ourselves is one hour photo's real strength .|Positive|Positive|Positive
+it's up to you to decide whether to admire these people's dedication to their cause or be repelled by their dogmatism , manipulativeness and narrow , fearful view of american life .|Positive|Positive|Negative
+mostly , [goldbacher] just lets her complicated characters be unruly , confusing and , through it all , human .|Positive|Positive|Positive
+. . . quite good at providing some good old fashioned spooks .|Positive|Positive|Positive
+at its worst , the movie is pretty diverting ; the pity is that it rarely achieves its best .|Positive|Negative|Negative
+scherfig's light-hearted profile of emotional desperation is achingly honest and delightfully cheeky .|Positive|Positive|Positive
+a journey spanning nearly three decades of bittersweet camaraderie and history , in which we feel that we truly know what makes holly and marina tick , and our hearts go out to them as both continue to negotiate their imperfect , love-hate relationship
+the wonderfully lush morvern callar is pure punk existentialism , and ms . ramsay and her co-writer , liana dognini , have dramatized the alan warner novel , which itself felt like an answer to irvine welsh's book trainspotting .|Positive|Negative|Negative
+as it turns out , you can go home again .|Positive|Negative|Negative
+you've already seen city by the sea under a variety of titles , but it's worth yet another visit .|Positive|Positive|Positive
+this kind of hands-on storytelling is ultimately what makes shanghai ghetto move beyond a good , dry , reliable textbook and what allows it to rank with its worthy predecessors .|Positive|Positive|Positive
+making such a tragedy the backdrop to a love story risks trivializing it , though chouraqui no doubt intended the film to affirm love's power to help people endure almost unimaginable horror .|Positive|Negative|Positive
+grown-up quibbles are beside the point here . the little girls understand , and mccracken knows that's all that matters .|Positive|Positive|Positive
+a powerful , chilling , and affecting study of one man's dying fall .|Positive|Positive|Positive
+this is a fascinating film because there is no clear-cut hero and no all-out villain .|Positive|Positive|Positive
+a dreadful day in irish history is given passionate , if somewhat flawed , treatment .|Positive|Positive|Positive
+. . . a good film that must have baffled the folks in the marketing department .|Positive|Negative|Positive
+. . . is funny in the way that makes you ache with sadness ( the way chekhov is funny ) , profound without ever being self-important , warm without ever succumbing to sentimentality .|Positive|Positive|Positive
+devotees of star trek ii : the wrath of khan will feel a nagging sense of deja vu , and the grandeur of the best next generation episodes is lacking .|Positive|Negative|Negative
+a soul-stirring documentary about the israeli/palestinian conflict as revealed through the eyes of some children who remain curious about each other against all odds .|Positive|Positive|Positive
+</div>  
+
+<br></br>
+
+*The accuracy based on the original label vs. my label (sample size = 30):*
+| # Misclassified Samples | Accuracy | 
+|---------|---------|
+| 8  | 76.7%  | 
+| 5  | 83.3%  |  
 
 *To be continued ...*
+
+#### Hyperparameter tuning
 
 
 ## How is the new way different from the traditional way of adapting AI?
@@ -174,17 +240,15 @@ In contrast, when adapting a finely-tuned Large Language Model (LLM) to perform 
 The old way vs. new way of AI/ML development (Image Source: Snorkel AI)
 {{< /embedded_citation >}}
 
-
-*Parameter tuning is to be experimented...*  
-*Unsupervised learning is to be explored using LLM fine-tuing...*
+ 
+* LLM fine-tuing application is to explore for unsupervised learning...*
 
 
 ## References
 [1] 
 
-## Next Steps
-- Exploration of leveraging LLM to predict clusters
-- Investigate misclassified samples to gather insights about data collection & quality
+## Further Exploration
+- Exploration of leveraging LLM to predict clusters - unsupervised leanring
 - The impacts of parameters fine-tuning on model performance (e.g. learning rate)
 - Exploration of LoRa in excelerating fine-tuning
 

@@ -3,7 +3,34 @@ languageCode = "en-us"
 title = "Shel (Run) Zhou's Blog"
 theme = "PaperMod"
 
+enableInlineShortcodes = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+enableEmoji = true
+pygmentsUseClasses = true
+# googleAnalytics = "UA-123-45"
+
 [params]
+  env = "production" # to enable google analytics, opengraph, twitter-cards and schema.
+  description = ""
+  author = "Run Zhou"
+  # author = ["Me", "You"] # multiple authors
+  
+  defaultTheme = "auto"
+  # disableThemeToggle = true
+  ShowShareButtons = true
+  ShowReadingTime = true
+  # disableSpecial1stPost = true
+  displayFullLangName = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  ShowToc = true
+  # comments = false
+
   [params.homeInfoParams]
     Title = "Hi, Shel's here. Who's there?"
     Content = " This is my learning hub. I learn new things through both building and thinking. In my leisure time, I love 🎾, 🏃‍♀️, 📻, 📖, 🎨, ✈️, 🐶."
@@ -34,4 +61,39 @@ theme = "PaperMod"
     name = "Posts"
     url = "/post/"
     weight = 10
+
+[minify]
+disableXML = true
+# minifyOutput = true
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
+[privacy]
+
+  [privacy.vimeo]
+  disabled = false
+  simple = true
+
+  # ... and so on
+
+[services]
+
+  [services.instagram]
+  disableInlineCSS = true
+
+  [services.twitter]
+  disableInlineCSS = true
+
+# ... and so on
+
+
+
 
