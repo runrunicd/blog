@@ -10,7 +10,7 @@ buildFuture = false
 buildExpired = false
 enableEmoji = true
 pygmentsUseClasses = true
-# googleAnalytics = "UA-123-45"
+#googleAnalytics = "UA-123-45"
 
 [params]
   env = "production" # to enable google analytics, opengraph, twitter-cards and schema.
@@ -33,7 +33,7 @@ pygmentsUseClasses = true
 
   [params.homeInfoParams]
     Title = "Hi, Shel's here. Who's there?"
-    Content = " This is my learning hub. I learn new things through both building and thinking. In my leisure time, I love 🎾, 🏃‍♀️, 📻, 📖, 🎨, ✈️, 🐶."
+    Content = " This is my learning hub. I learn new things through reading, building, and thinking. In my leisure time, I love 🎾, 🏃‍♀️, 📻, 📖, 🎨, ✈️, 🐶."
 
   [[params.socialIcons]]
     name = "LinkedIn"
@@ -62,6 +62,12 @@ pygmentsUseClasses = true
     url = "/post/"
     weight = 10
 
+  [[menu.main]]
+    identifier = "books"
+    name = "Books"
+    url = "/books/"
+    weight = 50
+
 [minify]
 disableXML = true
 # minifyOutput = true
@@ -82,8 +88,6 @@ noClasses = false
   disabled = false
   simple = true
 
-  # ... and so on
-
 [services]
 
   [services.instagram]
@@ -92,7 +96,6 @@ noClasses = false
   [services.twitter]
   disableInlineCSS = true
 
-# ... and so on
 
 
 
