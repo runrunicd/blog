@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Aug 2023 21:34:17 -0700</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Simple Framework for LLM Fine-Tuning on TPU &amp; Some Insights</title>
+      <title>Build a Simple Framework for LLM Fine-Tuning on TPU &amp; Data Science Applications</title>
       <link>https://runrunicd.github.io/blog/post/2023-08-28-llm-fine-tuning/</link>
       <pubDate>Mon, 28 Aug 2023 21:34:17 -0700</pubDate>
       
@@ -23,7 +23,8 @@ Take, for example, the process of scaling a business from the ground up. It ofte
       <pubDate>Thu, 27 Jul 2023 17:00:01 -0700</pubDate>
       
       <guid>https://runrunicd.github.io/blog/post/2023-07-27-inner-game/</guid>
-      <description>🔖 Two Worlds The calendar years 2022 - 2023 are the milestones for my spiritual growth. I feel and see that there are two systems. The visible one is created by human beings over ages, where everyone sort of finds a path to follow. This path is designed with rules. The second world is invisible, but I feel that it is grander and is related to the reason why I came into this world.</description>
+      <description>There are inspirations in my head from time to time. I&amp;rsquo;m documenting them here as fuel for my side project of writing a book.
+🔖 Two Worlds The calendar years 2022 - 2023 are the milestones for my spiritual growth. I feel and see that there are two systems. The visible one is created by human beings over ages, where everyone sort of finds a path to follow. This path is designed with rules, fame, monetary values.</description>
     </item>
     
   </channel>
