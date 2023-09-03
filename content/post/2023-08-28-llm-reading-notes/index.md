@@ -1,5 +1,5 @@
 ---
-title: "Learning Notes on Large Language Model"
+title: "Learning Notes on Large Language Model - Continued..."
 date: 2023-08-01T13:33:00-07:00
 draft: true
 tags: ["large-language-model"]
@@ -45,7 +45,7 @@ Feedback (RLHF).
 
 ##### Hyperparameters
 - AdamW optimizer
-- Learning rate schedule (warmup steps, )
+- Learning rate schedule (warmup steps)
 - Weight decay
 - Gradient clipping
 
@@ -56,6 +56,34 @@ Feedback (RLHF).
 
 ## Fine-Tuning
 Llama 2-Chat is the result of several months of research and iterative applications of alignment techniques, including both instruction tuning and RLHF, requiring significant computational and annotation resources.
+
+- Supervised fine-tuning (SFT) with iterative reward modeling and RLHF
+
+- Annotators have written both the prompt and its answer
+    - helpfulness: how well Llama 2-Chat responses fulfill users’ requests and provide requested information
+    - safety: whether Llama 2-Chat’s responses are unsafe
+
+- Find-tuning started with the SFT stage with publicly available instruction tuning data (Chung et al., 2022)
+
+- To improve alignment, high-quality vendor-based SFT data in the order of tens of thousands is shown to improve the results (Touvron et al. 2023)
+
+- Data checks are important as different annotation platforms and vendors result in different model performance (Touvron et al. 2023)
+
+- RLHF is a model training procedure that is applied to a fine-tuned language model to further align model behavior with human preferences and instruction following. 
+
+- Human Preference Data Collection: We ask annotators to first write a prompt, then choose
+between two sampled model responses, based on provided criteria. In order to maximize the diversity, the
+two responses to a given prompt are sampled from two different model variants, and varying the temperature
+hyper-parameter. In addition to giving participants a forced choice, we also ask annotators to label the degree
+to which they prefer their chosen response over the alternative: either their choice is significantly better, better,
+slightly better, or negligibly better/ unsure. (Touvron et al. 2023)
+
+- Reward Modeling: The reward model takes a model response and its corresponding prompt (including contexts from previous
+turns) as inputs and outputs a scalar score to indicate the quality (e.g., helpfulness and safety) of the model
+generation. Leveraging such response scores as rewards, we can optimize Llama 2-Chat during RLHF for
+better human preference alignment and improved helpfulness and safety. We train two separate reward
+models, one optimized for helpfulness (referred to as Helpfulness RM) and another for safety (Safety RM) to address helpfulness vs. safety trade-off.
+
 
 ## Approach to Model Safety
 - Use safety-specific data annotation and tuning, conduct red-teaming, and employ iterative evaluations.

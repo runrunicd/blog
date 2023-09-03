@@ -37,7 +37,7 @@ I've had fun to generate content by ChatGPT from OpenAI in response to prompts, 
 ##### Installation & download:
 ✅ Set up Google Cloud with GPU/TPU (Note: I have TPU. EasyLM is built for GPU as well)  
 ✅ [Install EasyLM](https://github.com/young-geng/EasyLM)  
-✅ [Download OpenLLaMA version 3b 2v](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true)  
+✅ [Download OpenLLaMA version 3b v2](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true)  
 ✅ [Download Rotten Tomatoes data](https://huggingface.co/datasets/MrbBakh/Rotten_Tomatoes)  
 ##### Common installation issues:
 ```bash
@@ -60,7 +60,7 @@ https://github.com/huggingface/transformers/issues/20011
 #### Step 1: Formulate the target task and tell the model my intention.
 I want to train a model that can help me predict whether a movie review's sentiment is positive or negative. 
 
-First of all, I have a generic pre-trained LLM. Here, I chose [OpenLLaMA version 3b 2v](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true). Secondly, I'd like to tell the model my intention by preparing a dataset of movie reviews and labeled sentiments.
+First of all, I have a generic pre-trained LLM. Here, I chose [OpenLLaMA version 3b v2](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true). Secondly, I'd like to tell the model my intention by preparing a dataset of movie reviews and labeled sentiments.
 
 This is a sample data from *output_dataset_train.txt*:
 
