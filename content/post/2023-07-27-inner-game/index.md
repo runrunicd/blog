@@ -6,7 +6,10 @@ tags: ['psychology', 'self-parenting', 'self-love', 'growth']
 categories: ['life']
 ---
 
-There are inspirations in my head from time to time. I'm documenting them here as fuel for my side project of writing a book.
+Here, I'm documenting my conversations with my wish - 10-year project.
+
+#### 🔖 ☯️
+The growth in life is a process of integrating yin and yang. It is constantly changing, balancing, and integrating.
 
 #### 🔖 Two Worlds
 The calendar years 2022 - 2023 are the milestones for my spiritual growth. I feel and see that there are two systems. The visible one is created by human beings over ages, where everyone sort of finds a path to follow. This path is designed with rules, fame, monetary values. The second world is invisible, but I feel that it is grander and is related to the reason why I came into this world.

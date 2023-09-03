@@ -1,10 +1,12 @@
 ---
-title: "Learning Notes on Large Language Model - Continued..."
+title: "Learning Notes on Large Language Model (Dumping Knowledge Here for Now)"
 date: 2023-08-01T13:33:00-07:00
-draft: true
+draft: false
 tags: ["large-language-model"]
 categories: ["AI/ML"]
 ---
+
+## Messy ...
 
 ## Introduction to Large Language Model
 
@@ -26,8 +28,6 @@ Feedback (RLHF).
     - ChatGPT (OpenAI)
     - BARD (Google)
     - Claude (Antropic)
-
-
 
 ## Pretraining
 - Use standard transformer architecture
@@ -90,9 +90,7 @@ models, one optimized for helpfulness (referred to as Helpfulness RM) and anothe
 ![safety evaluation](images/safety_evaluation.png#center)
 {{< embedded_citation >}}(Image Source: Touvron et al. 2023){{< /embedded_citation >}}
 
-
 - Testing conducted to date has been in English and has not — and could not — cover all scenarios.
-
 
 ![training of llama-2-chat](images/training_of_llama2_chat.png#center)
 {{< embedded_citation >}}(Image Source: Touvron et al. 2023){{< /embedded_citation >}}
