@@ -1,5 +1,5 @@
 ---
-title: "Build a Simple Framework for LLM Fine-Tuning on TPU & Data Science Applications"
+title: "Build a Simple Framework for LLM Fine-Tuning on TPU & Applications"
 date: 2023-08-28T21:34:17-07:00
 draft: false
 tags: ["large-language-model"]
@@ -245,15 +245,16 @@ The old way vs. new way of AI/ML development (Image Source: Snorkel AI)
 
 
 ## References
-[1] 
+...
 
 ## Further Exploration
 - Exploration of leveraging LLM to predict clusters - unsupervised leanring
 - The impacts of parameters fine-tuning on model performance (e.g. learning rate)
 - Exploration of LoRa in excelerating fine-tuning
 
-## Thoughts on 
+## Thoughts
 - Data collection & curation
+- Application
 
 
 
