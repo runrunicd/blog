@@ -7,7 +7,7 @@ categories: ['life']
 weight: 1 
 ---
 
-Here, I'm documenting snippets of my conversations with my wish about a 10-year vision. 图图徐之.
+Here, I'm documenting snippets of my conversations with my wish about a 10-year vision. In Chinese, 图图徐之.
 
 #### 🔖 ☯️
 The growth in life is a process of integrating yin and yang. It is constantly changing, balancing, and integrating. What facilitates true growth in life? Pain and love. 
@@ -39,5 +39,20 @@ Knowledge is the projection of wisdom, which comes from God through gifts—expe
 What exactly is it? My current understanding is that it comes from a deep self-awareness, which in turn reduces the risk of losing oneself due to external influences. With such a sense of certainty, people will have creativity because it's a unique path. Why is copying or blindly following others not creative? I think it's because such creations lack the creator's unique chain of thought. They don't hold up under scrutiny and are easily disrupted by external influences (authority, temptation, doubt).
 
 Is anyone truly certain? It seems there's no one who is completely certain about all facets of life. Perhaps this is the meaning of life. Thinking about it, everyone is lovable and pitiable. 
+
+What exactly is it? My current understanding is that it comes from a deep self-awareness, which in turn reduces the risk of losing oneself due to external influences. With such a sense of certainty, people will have creativity because it's a unique path. Why is copying or blindly following others not creative? I think it's because such creations lack the creator's unique chain of thought. They don't hold up under scrutiny and are easily disrupted by external influences (authority, temptation, doubt).
+
+Is anyone truly certain? It seems there's no one who is completely certain about all facets of life. Perhaps this is the meaning of life. Thinking about it, everyone is lovable and pitiable. 
+
+#### 🔖 Girls to Women
+I hope to become mature as time flies. I feel that women should not strive to seize and prove in a way that disrupts the natural balance of Yin and Yang. I hope that every girl believes in herself and falls in love with the beauty of herself at every stage, like individual flowers. They should help and appreciate each other without jealousy, and bloom with their own unique radiance.
+
+Women should exert the power akin to that of the Earth, the power of femininity, to support their world.
+
+
+
+
+
+
 
 
