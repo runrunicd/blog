@@ -6,10 +6,12 @@ tags: ['psychology', 'self-parenting', 'self-love', 'growth']
 categories: ['life']
 ---
 
-Here, I'm documenting my conversations with my wish - 10-year project.
+Here, I'm documenting snippets of my conversations with my wish and my feelings about a 10-year vision. 图图徐之.
 
 #### 🔖 ☯️
-The growth in life is a process of integrating yin and yang. It is constantly changing, balancing, and integrating.
+The growth in life is a process of integrating yin and yang. It is constantly changing, balancing, and integrating. What facilitates true growth in life? Pain and love. 
+
+Everyone is born 'broken,' as those who read the Bible should know. My experience and observation of life tell me that regardless of one's material childhood circumstances and family atmosphere, the lessons of life still need to be independently explored and completed by each individual. Every childhood is lacking in some way. A happy childhood may lack life's trials; an apparently unfortunate one may lack the perception of love. Each of us is on a path in life to become complete, using external circumstances to refine our hearts, using the temporal to refine the eternal, and advancing in a roundabout way. Well, humaness = human mass, embrace it.
 
 #### 🔖 Two Worlds
 The calendar years 2022 - 2023 are the milestones for my spiritual growth. I feel and see that there are two systems. The visible one is created by human beings over ages, where everyone sort of finds a path to follow. This path is designed with rules, fame, monetary values. The second world is invisible, but I feel that it is grander and is related to the reason why I came into this world.
@@ -30,11 +32,10 @@ I completed a 6-month coach training program, where I listened to and shared man
 Respond to pain with a passionate kiss. I'm grateful for my simple and wonderful childhood, and also thankful for the growing pains of life; they are gifts bestowed by fate.
 
 #### 🔖 Be Creative
-Everyone is born 'broken,' as those who read the Bible should know. My experience and observation of life tell me that regardless of one's material childhood circumstances and family atmosphere, the lessons of life still need to be independently explored and completed by each individual. Every childhood is lacking in some way. A happy childhood may lack life's trials; an apparently unfortunate one may lack the perception of love. Each of us is on a path in life to become complete, using external circumstances to refine our hearts, using the temporal to refine the eternal, and advancing in a roundabout way.
+What exactly is it? My current understanding is that it comes from a deep self-awareness, which in turn reduces the risk of losing oneself due to external influences. With such a sense of certainty, people will have creativity because it's a unique path. Why is copying or blindly following others not creative? I think it's because such creations lack the creator's unique chain of thought. They don't hold up under scrutiny and are easily disrupted by external influences (authority, temptation, doubt).
 
-Returning to creativity, what exactly is it? On the surface, it seems to be something completely new or a combination of many points. My current understanding is that it comes from a deep self-awareness, which in turn reduces the risk of losing oneself due to external influences. With such a sense of certainty, people will have creativity because it's a unique path. Why is copying or blindly following others not creative? I think it's because such creations lack the creator's unique chain of thought. They don't hold up under scrutiny and are easily disrupted by external influences (authority, temptation, doubt).
+Is anyone truly certain? It seems there's no one who is completely certain about all facets of life. Perhaps this is the meaning of life. Thinking about it, everyone is lovable and pitiable. 
 
-Is anyone truly certain? It seems there's no one who is completely certain about all facets of life. Perhaps this is the meaning of life. Thinking about it, everyone is lovable and pitiable.
-
-Well, humaness = human mass, embrace it.
+#### 🔖 Social Networking
+If I am not a person who is good at networking or socializing, then what I need are works that rise from the ground up, spiritual richness, and a completeness. Only when facing severe trials and remaining steadfast can one reveal their true character. I'm willing to give myself some time, be my own best friend, and believe in the power of faith.
 

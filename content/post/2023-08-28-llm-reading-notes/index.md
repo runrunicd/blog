@@ -1,5 +1,5 @@
 ---
-title: "Learning Notes on Large Language Model (Dumping Knowledge Here for Now)"
+title: "Learning Notes on Large Language Model (Dumping Knowledge for Now)"
 date: 2023-08-01T13:33:00-07:00
 draft: false
 tags: ["large-language-model"]
@@ -83,6 +83,10 @@ turns) as inputs and outputs a scalar score to indicate the quality (e.g., helpf
 generation. Leveraging such response scores as rewards, we can optimize Llama 2-Chat during RLHF for
 better human preference alignment and improved helpfulness and safety. We train two separate reward
 models, one optimized for helpfulness (referred to as Helpfulness RM) and another for safety (Safety RM) to address helpfulness vs. safety trade-off.
+
+- System Message for Multi-Turn Consistency: In a dialogue setup, the initial RLHF models tended to forget the initial instruction after a few turns of dialogue. To address these limitations, we propose Ghost Attention (GAtt), a very simple method inspired by Context Distillation (Bai et al., 2022b) that hacks the fine-tuning data to help the attention focus in a multi-stage process. GAtt enables dialogue control over multiple turns.
+![multi-turn consistency](images/multi_turn_consistency.png#center)
+{{< embedded_citation >}}(Image Source: Touvron et al. 2023){{< /embedded_citation >}}
 
 
 ## Approach to Model Safety
