@@ -68,6 +68,12 @@ pygmentsUseClasses = true
     url = "/books/"
     weight = 50
 
+  [[menu.main]]
+    identifier = "修"
+    name = "修"
+    url = "/修/"
+    weight = 60
+
 [minify]
 disableXML = true
 # minifyOutput = true
