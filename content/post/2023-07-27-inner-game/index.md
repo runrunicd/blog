@@ -4,6 +4,7 @@ date: 2023-07-27T17:00:01-07:00
 draft: false
 tags: ['psychology', 'self-parenting', 'self-love', 'growth']
 categories: ['life']
+weight: 1 
 ---
 
 Here, I'm documenting snippets of my conversations with my wish and my feelings about a 10-year vision. 图图徐之.
@@ -12,7 +13,7 @@ Here, I'm documenting snippets of my conversations with my wish and my feelings 
 The growth in life is a process of integrating yin and yang. It is constantly changing, balancing, and integrating. What facilitates true growth in life? Pain and love. 
 
 #### 🔖 Big Love
-I completed a 6-month coach training program, where I listened to and shared many insights and concerns. I began to experience real love and the connections between people, transcending race, culture, age, and social status. I have a strong feeling and epiphany: life unfolds and expands through love. If the universe supports our expansion, then the universe must be love. It's as if I've found the key to unlocking the door of the universe. I'm not entirely clear on this yet. I need to go back to life to observe, experience, and practice it.
+I completed a 6-month coach training program, where I listened to and shared many insights and concerns. I began to experience real connections between people, transcending race, culture, age, and social status. I have a strong feeling and epiphany: life unfolds and expands through love. If the universe supports our expansion, then the universe must be love. It's as if I've found the key to unlocking the door of the universe. I'm not entirely clear on this yet. I need to go back to life to observe, experience, and practice it.
 
 Everyone is born 'broken', as those who read the Bible should know. My experience and observation of life tell me that regardless of one's material childhood circumstances and family atmosphere, the lessons of life still need to be independently explored and completed by each individual. Every childhood is lacking in some way. A happy childhood may lack life's trials; an apparently unfortunate one may lack the perception of love. Each of us is on a path in life to become complete, using external circumstances to refine our hearts, using the temporal to refine the eternal, and advancing in a roundabout way. Well, humaness = human mass, embrace it.
 
