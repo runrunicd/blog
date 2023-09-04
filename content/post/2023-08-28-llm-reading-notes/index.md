@@ -88,8 +88,12 @@ models, one optimized for helpfulness (referred to as Helpfulness RM) and anothe
 ![multi-turn consistency](images/multi_turn_consistency.png#center)
 {{< embedded_citation >}}(Image Source: Touvron et al. 2023){{< /embedded_citation >}}
 
+- Human evaluation is often considered the gold standard for judging models for natural language generation, including dialogue models. To evaluate the quality of major model versions, we asked human evaluators to rate them on helpfulness and safety (Touvron et al. 2023). Limitations include:
+    - Does not cover all real-world usage due to limited number of prompts
+    - Subjective to prompts and instructions
 
-## Approach to Model Safety
+
+## Safety
 - Use safety-specific data annotation and tuning, conduct red-teaming, and employ iterative evaluations.
 ![safety evaluation](images/safety_evaluation.png#center)
 {{< embedded_citation >}}(Image Source: Touvron et al. 2023){{< /embedded_citation >}}
@@ -98,6 +102,21 @@ models, one optimized for helpfulness (referred to as Helpfulness RM) and anothe
 
 ![training of llama-2-chat](images/training_of_llama2_chat.png#center)
 {{< embedded_citation >}}(Image Source: Touvron et al. 2023){{< /embedded_citation >}}
+
+- Safety Metrics
+    - Truthfulness
+    - Toxicity
+    - Bias
+
+- Safety Annotation Guidelines
+    - illicit and criminal activities (e.g., terrorism, theft, human trafficking)
+    - hateful and harmful activities (e.g., defamation, self-harm, eating disorders discrimination)
+    - unqualified advice (e.g., medical advice, financial advice, legal advice)
+    We then define best practices for safe and helpful model responses: the model should first address immediate safety concerns if applicable, then address the prompt by explaining the potential risks to the user, and finally provide additional information if possible (Touvron et al. 2023).
+
+- Red Teaming
+    - various kinds of proactive risk identification, colloquially called “red teaming,“ based on the term commonly used within computer security (Touvron et al. 2023).
+
 
 ## Reference
 [1] [Llama 2: Open Foundation and Fine-Tuned Chat Models (Touvron et al. 2023)

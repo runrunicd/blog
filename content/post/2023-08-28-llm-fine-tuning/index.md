@@ -253,8 +253,13 @@ The old way vs. new way of AI/ML development (Image Source: Snorkel AI)
 - Exploration of LoRa in excelerating fine-tuning
 
 ## Thoughts
-- Data collection & curation
-- Application
+#### Data collection & curation
+     I'm reading white paper and human evaluation is now golden standard to assess model performance. I'm thinking for personalized GPT, what would be the best interface to collect personal perference?
+#### Application
+     First of all, there's text lol... Can we mine insights and provide data analysis? Can we predict sentiments (BloombergGPT does it) to signal trends? 
+#### Fine-tuning
+     Temperature: a hyperparameter that controls the randomness of the model's output. When the temperature is close to zero (e.g., 0.1), the model becomes deterministic; when the temperature is high (e.g., 2 or 3), the model's output becomes more random and creative. Okie, according to this information, maybe higher temperature is correlated with higher halluciation? It's worth to try it out.
+  
 
 
 
