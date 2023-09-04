@@ -107,8 +107,8 @@ BLOOM (Scao et al., 2022) LLaMa 1 (Touvron et al., 2023) LLaMa 2, LLaMa 2-Chat w
   "keywords": [
     "large-language-model"
   ],
-  "articleBody": "Messy … Introduction to Large Language Model Auto-regressive transformers are pretrained on an extensive corpus of self-supervised data, followed by alignment with human preferences via techniques such as Reinforcement Learning with Human Feedback (RLHF).\nTraining methodology is simple but is limited to a few players with high computational requirements\nPublic pretrained LLM\nBLOOM (Scao et al., 2022) LLaMa 1 (Touvron et al., 2023) LLaMa 2, LLaMa 2-Chat which is optimized for dialogue use cases Falcon (Penedo et al., 2023) Closed pretrained LLM\nGPT-3 (Brown et al., 2020) Chinchilla (Hoffmann et al., 2022) Closed “product” LLM that are heavily fine-tuned to align with human preferences to enhance their usability and safety\nChatGPT (OpenAI) BARD (Google) Claude (Antropic) Pretraining Use standard transformer architecture From LLaMa 1 to LLaMa 2, increased context length and grouped-query attention (GQA) Apply pre-normalization using RMSNorm Use SwiGLU activation function \u0026 rotary positional embeddings Tokenizr - the same as LLaMa 1 Variables Params Context length Tokens Learning rate (LR) GQA Hyperparameters AdamW optimizer Learning rate schedule (warmup steps) Weight decay Gradient clipping Pretrained Model Evaluation Summarize the overall performance across a suite of popular benchmarks. (Image Source: Touvron et al. 2023) Fine-Tuning Llama 2-Chat is the result of several months of research and iterative applications of alignment techniques, including both instruction tuning and RLHF, requiring significant computational and annotation resources.\nSupervised fine-tuning (SFT) with iterative reward modeling and RLHF\nAnnotators have written both the prompt and its answer\nhelpfulness: how well Llama 2-Chat responses fulfill users’ requests and provide requested information safety: whether Llama 2-Chat’s responses are unsafe Find-tuning started with the SFT stage with publicly available instruction tuning data (Chung et al., 2022)\nTo improve alignment, high-quality vendor-based SFT data in the order of tens of thousands is shown to improve the results (Touvron et al. 2023)\nData checks are important as different annotation platforms and vendors result in different model performance (Touvron et al. 2023)\nRLHF is a model training procedure that is applied to a fine-tuned language model to further align model behavior with human preferences and instruction following.\nHuman Preference Data Collection: We ask annotators to first write a prompt, then choose between two sampled model responses, based on provided criteria. In order to maximize the diversity, the two responses to a given prompt are sampled from two different model variants, and varying the temperature hyper-parameter. In addition to giving participants a forced choice, we also ask annotators to label the degree to which they prefer their chosen response over the alternative: either their choice is significantly better, better, slightly better, or negligibly better/ unsure. (Touvron et al. 2023)\nReward Modeling: The reward model takes a model response and its corresponding prompt (including contexts from previous turns) as inputs and outputs a scalar score to indicate the quality (e.g., helpfulness and safety) of the model generation. Leveraging such response scores as rewards, we can optimize Llama 2-Chat during RLHF for better human preference alignment and improved helpfulness and safety. We train two separate reward models, one optimized for helpfulness (referred to as Helpfulness RM) and another for safety (Safety RM) to address helpfulness vs. safety trade-off.\nSystem Message for Multi-Turn Consistency: In a dialogue setup, the initial RLHF models tended to forget the initial instruction after a few turns of dialogue. To address these limitations, we propose Ghost Attention (GAtt), a very simple method inspired by Context Distillation (Bai et al., 2022b) that hacks the fine-tuning data to help the attention focus in a multi-stage process. GAtt enables dialogue control over multiple turns. (Image Source: Touvron et al. 2023) Approach to Model Safety Use safety-specific data annotation and tuning, conduct red-teaming, and employ iterative evaluations. (Image Source: Touvron et al. 2023) Testing conducted to date has been in English and has not — and could not — cover all scenarios.\n(Image Source: Touvron et al. 2023) Reference [1] Llama 2: Open Foundation and Fine-Tuned Chat Models (Touvron et al. 2023) ",
-  "wordCount" : "656",
+  "articleBody": "Messy … Introduction to Large Language Model Auto-regressive transformers are pretrained on an extensive corpus of self-supervised data, followed by alignment with human preferences via techniques such as Reinforcement Learning with Human Feedback (RLHF).\nTraining methodology is simple but is limited to a few players with high computational requirements\nPublic pretrained LLM\nBLOOM (Scao et al., 2022) LLaMa 1 (Touvron et al., 2023) LLaMa 2, LLaMa 2-Chat which is optimized for dialogue use cases Falcon (Penedo et al., 2023) Closed pretrained LLM\nGPT-3 (Brown et al., 2020) Chinchilla (Hoffmann et al., 2022) Closed “product” LLM that are heavily fine-tuned to align with human preferences to enhance their usability and safety\nChatGPT (OpenAI) BARD (Google) Claude (Antropic) Pretraining Use standard transformer architecture From LLaMa 1 to LLaMa 2, increased context length and grouped-query attention (GQA) Apply pre-normalization using RMSNorm Use SwiGLU activation function \u0026 rotary positional embeddings Tokenizr - the same as LLaMa 1 Variables Params Context length Tokens Learning rate (LR) GQA Hyperparameters AdamW optimizer Learning rate schedule (warmup steps) Weight decay Gradient clipping Pretrained Model Evaluation Summarize the overall performance across a suite of popular benchmarks. (Image Source: Touvron et al. 2023) Fine-Tuning Llama 2-Chat is the result of several months of research and iterative applications of alignment techniques, including both instruction tuning and RLHF, requiring significant computational and annotation resources.\nSupervised fine-tuning (SFT) with iterative reward modeling and RLHF\nAnnotators have written both the prompt and its answer\nhelpfulness: how well Llama 2-Chat responses fulfill users’ requests and provide requested information safety: whether Llama 2-Chat’s responses are unsafe Find-tuning started with the SFT stage with publicly available instruction tuning data (Chung et al., 2022)\nTo improve alignment, high-quality vendor-based SFT data in the order of tens of thousands is shown to improve the results (Touvron et al. 2023)\nData checks are important as different annotation platforms and vendors result in different model performance (Touvron et al. 2023)\nRLHF is a model training procedure that is applied to a fine-tuned language model to further align model behavior with human preferences and instruction following.\nHuman Preference Data Collection: We ask annotators to first write a prompt, then choose between two sampled model responses, based on provided criteria. In order to maximize the diversity, the two responses to a given prompt are sampled from two different model variants, and varying the temperature hyper-parameter. In addition to giving participants a forced choice, we also ask annotators to label the degree to which they prefer their chosen response over the alternative: either their choice is significantly better, better, slightly better, or negligibly better/ unsure. (Touvron et al. 2023)\nReward Modeling: The reward model takes a model response and its corresponding prompt (including contexts from previous turns) as inputs and outputs a scalar score to indicate the quality (e.g., helpfulness and safety) of the model generation. Leveraging such response scores as rewards, we can optimize Llama 2-Chat during RLHF for better human preference alignment and improved helpfulness and safety. We train two separate reward models, one optimized for helpfulness (referred to as Helpfulness RM) and another for safety (Safety RM) to address helpfulness vs. safety trade-off.\nSystem Message for Multi-Turn Consistency: In a dialogue setup, the initial RLHF models tended to forget the initial instruction after a few turns of dialogue. To address these limitations, we propose Ghost Attention (GAtt), a very simple method inspired by Context Distillation (Bai et al., 2022b) that hacks the fine-tuning data to help the attention focus in a multi-stage process. GAtt enables dialogue control over multiple turns. (Image Source: Touvron et al. 2023) Human evaluation is often considered the gold standard for judging models for natural language generation, including dialogue models. To evaluate the quality of major model versions, we asked human evaluators to rate them on helpfulness and safety (Touvron et al. 2023). Limitations include:\nDoes not cover all real-world usage due to limited number of prompts Subjective to prompts and instructions Safety Use safety-specific data annotation and tuning, conduct red-teaming, and employ iterative evaluations. (Image Source: Touvron et al. 2023) Testing conducted to date has been in English and has not — and could not — cover all scenarios.\n(Image Source: Touvron et al. 2023) Safety Metrics\nTruthfulness Toxicity Bias Safety Annotation Guidelines\nillicit and criminal activities (e.g., terrorism, theft, human trafficking) hateful and harmful activities (e.g., defamation, self-harm, eating disorders discrimination) unqualified advice (e.g., medical advice, financial advice, legal advice) We then define best practices for safe and helpful model responses: the model should first address immediate safety concerns if applicable, then address the prompt by explaining the potential risks to the user, and finally provide additional information if possible (Touvron et al. 2023). Red Teaming\nvarious kinds of proactive risk identification, colloquially called “red teaming,“ based on the term commonly used within computer security (Touvron et al. 2023). Reference [1] Llama 2: Open Foundation and Fine-Tuned Chat Models (Touvron et al. 2023) ",
+  "wordCount" : "818",
   "inLanguage": "en",
   "datePublished": "2023-08-01T13:33:00-07:00",
   "dateModified": "2023-08-01T13:33:00-07:00",
@@ -234,7 +234,7 @@ BLOOM (Scao et al., 2022) LLaMa 1 (Touvron et al., 2023) LLaMa 2, LLaMa 2-Chat w
                 <li>
                     <a href="#fine-tuning" aria-label="Fine-Tuning">Fine-Tuning</a></li>
                 <li>
-                    <a href="#approach-to-model-safety" aria-label="Approach to Model Safety">Approach to Model Safety</a></li>
+                    <a href="#safety" aria-label="Safety">Safety</a></li>
                 <li>
                     <a href="#reference" aria-label="Reference">Reference</a>
                 </li>
@@ -366,8 +366,15 @@ models, one optimized for helpfulness (referred to as Helpfulness RM) and anothe
 
 </p>
 </li>
+<li>
+<p>Human evaluation is often considered the gold standard for judging models for natural language generation, including dialogue models. To evaluate the quality of major model versions, we asked human evaluators to rate them on helpfulness and safety (Touvron et al. 2023). Limitations include:</p>
+<ul>
+<li>Does not cover all real-world usage due to limited number of prompts</li>
+<li>Subjective to prompts and instructions</li>
 </ul>
-<h2 id="approach-to-model-safety">Approach to Model Safety<a hidden class="anchor" aria-hidden="true" href="#approach-to-model-safety">#</a></h2>
+</li>
+</ul>
+<h2 id="safety">Safety<a hidden class="anchor" aria-hidden="true" href="#safety">#</a></h2>
 <ul>
 <li>
 <p>Use safety-specific data annotation and tuning, conduct red-teaming, and employ iterative evaluations.
@@ -390,6 +397,31 @@ models, one optimized for helpfulness (referred to as Helpfulness RM) and anothe
 </div>
 
 </p>
+<ul>
+<li>
+<p>Safety Metrics</p>
+<ul>
+<li>Truthfulness</li>
+<li>Toxicity</li>
+<li>Bias</li>
+</ul>
+</li>
+<li>
+<p>Safety Annotation Guidelines</p>
+<ul>
+<li>illicit and criminal activities (e.g., terrorism, theft, human trafficking)</li>
+<li>hateful and harmful activities (e.g., defamation, self-harm, eating disorders discrimination)</li>
+<li>unqualified advice (e.g., medical advice, financial advice, legal advice)
+We then define best practices for safe and helpful model responses: the model should first address immediate safety concerns if applicable, then address the prompt by explaining the potential risks to the user, and finally provide additional information if possible (Touvron et al. 2023).</li>
+</ul>
+</li>
+<li>
+<p>Red Teaming</p>
+<ul>
+<li>various kinds of proactive risk identification, colloquially called “red teaming,“ based on the term commonly used within computer security (Touvron et al. 2023).</li>
+</ul>
+</li>
+</ul>
 <h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
 <p>[1] <a href="https://arxiv.org/pdf/2307.09288.pdf">Llama 2: Open Foundation and Fine-Tuned Chat Models (Touvron et al. 2023)
 </a></p>
