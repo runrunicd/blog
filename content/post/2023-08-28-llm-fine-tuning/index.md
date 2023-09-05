@@ -23,7 +23,7 @@ With that in mind, I'm actively applying this philosophy to my exploration of LL
 ## How to fine tune an AI Model (LLM) to accomplish a binary classification task?
 I've had fun to generate content by ChatGPT from OpenAI in response to prompts, but how does one train (or fine-tune) a LLM to accomplish a target prediction task? I've tailored a task to predict the sentiments of movie reviews from Rotten Tomatoes, using the [OpenLLaMA](https://github.com/openlm-research/open_llama) which is the permissively licensed open source reproduction of Meta AI's [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) large language model. 
 
-*AI models*
+##### AI models
 - GPT-4 (OpenAI): [white papaer](https://arxiv.org/abs/2303.08774)
 - LLaMA 2 (Meta AI): [white paper](https://arxiv.org/abs/2307.09288)
 - Claude (Anthropic)
@@ -34,12 +34,12 @@ I've had fun to generate content by ChatGPT from OpenAI in response to prompts, 
 ### A simple framework
 
 #### Setup: The following resources are helpful in accomplishing the task.
-##### Installation & download:
+##### Installation & download
 ✅ Set up Google Cloud with GPU/TPU (Note: I have TPU. EasyLM is built for GPU as well)  
 ✅ [Install EasyLM](https://github.com/young-geng/EasyLM)  
 ✅ [Download OpenLLaMA version 3b v2](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true)  
 ✅ [Download Rotten Tomatoes data](https://huggingface.co/datasets/MrbBakh/Rotten_Tomatoes)  
-##### Common installation issues:
+##### Common installation issues
 ```bash
 # Error
 # https://github.com/huggingface/transformers/issues/19844#issue-1421007669
@@ -102,6 +102,25 @@ The sample model output on the test data *after* fine-tuning:
 ```
 
 #### Step 2: Fine tune the pre-trained model on the target task labeled training dataset.
+
+I trained using the AdamW optimizer (Loshchilov and Hutter, 2017). Accuracy was evaluated based on the same test dataset. 
+##### [*AdamW Optimizer*](https://github.com/young-geng/EasyLM/blob/main/docs/optimizer.md)
+
+
+<div style="width: 100%; max-height: 400px; overflow: auto; border: 1px solid #ccc; font-size: 12px;;">
+
+ ID|LR|params|b1|b2|warmup steps|weight decay|tokens|accuracy
+|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|
+ 001|0.002|3B|0.9|0.9|184|0.001|378K|87.24%
+ 002|0.0002|3B|0.9|0.9|184|0.001|378K|
+ 003|0.00002|3B|0.9|0.9|184|0.001|378K|
+ 004|0.000002|3B|0.9|0.9|184|0.001|378K|
+
+
+</div>  
+
+*To be continued...*
+
 ```bash
 # Fine tune Tune a pre-trained model
 # total_steps: number of tokens divided by seq_length=1024
@@ -113,20 +132,24 @@ python3 -m EasyLM.models.llama.llama_train \
     --train_dataset.json_dataset.seq_length=1024 \
     --load_checkpoint='params::/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm/open_llama_3b_v2_easylm' \
     --tokenizer.vocab_file='/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm/tokenizer.model' \
-    --logger.output_dir='/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm_tuned'  \
+    --logger.output_dir='/checkpoint/xinleic/tune/EasyLM/my_models/open_llama_3b_v2_easylm_tuned_002'  \
     --mesh_dim='1,4,2' \
     --load_llama_config='3b' \
     --train_dataset.type='json' \
     --train_dataset.text_processor.fields='text' \
     --optimizer.type='adamw' \
     --optimizer.accumulate_gradient_steps=1 \
-    --optimizer.adamw_optimizer.lr=0.002 \
-    --optimizer.adamw_optimizer.end_lr=0.002 \
-    --optimizer.adamw_optimizer.lr_decay_steps=100000000 \
+    --optimizer.adamw_optimizer.lr=0.0002 \ #the initial learning rate
+    --optimizer.adamw_optimizer.end_lr=0.0002 \ #the final learning rate after decay
+    --optimizer.adamw_optimizer.lr_decay_steps=100000000 \ #the number of steps for cosine learning rate decay
     --optimizer.adamw_optimizer.weight_decay=0.001 \
     --optimizer.adamw_optimizer.multiply_by_parameter_scale=True \
-    --optimizer.adamw_optimizer.bf16_momentum=True 
+    --optimizer.adamw_optimizer.bf16_momentum=True \
+    --optimizer.adamw_optimizer.b1=0.9 \
+    --optimizer.adamw_optimizer.b2=0.9
 ```
+
+
 #### Step 3: Serve the tuned model.
 ```bash
 # Serve fine-tuned model
@@ -146,7 +169,7 @@ curl "http://0.0.0.0:5007/generate" \
 <br></br>
 
 ### How to improve accuracy
-🥳 Now, I have built a simple framework to train and evaluate a Language Learning Model (LLM). I am curious about which variables impact the model's performance. In practice, a finely-tuned model with a high level of accuracy is essential for handling business-specific tasks. Let's experiment with the following variables to find out.  
+🥳 Now, I have built a simple framework to train and evaluate a Language Learning Model (LLM). I am curious about which variables impact the model's performance. In practice, a finely-tuned model with a high level of accuracy is essential for handling business-specific tasks. Let's experiment with the following variables to find out (model ID 001).
 
 #### Training data size
 <span style="background-color: #FFDAB9"> The larger the training data set, the better the model performs. </span>
@@ -254,11 +277,11 @@ The old way vs. new way of AI/ML development (Image Source: Snorkel AI)
 
 ## Thoughts
 #### Data collection & curation
-     I'm reading white paper and human evaluation is now golden standard to assess model performance. I'm thinking for personalized GPT, what would be the best interface to collect personal perference?
+I'm reading white paper and human evaluation is now golden standard to assess model performance. I'm thinking for personalized GPT, what would be the best interface to collect personal perference?
 #### Application
-     First of all, there's text lol... Can we mine insights and provide data analysis? Can we predict sentiments (BloombergGPT does it) to signal trends? 
+First of all, there's text lol... Can we mine insights and provide data analysis? Can we predict sentiments (BloombergGPT does it) to signal trends? 
 #### Fine-tuning
-     Temperature: a hyperparameter that controls the randomness of the model's output. When the temperature is close to zero (e.g., 0.1), the model becomes deterministic; when the temperature is high (e.g., 2 or 3), the model's output becomes more random and creative. Okie, according to this information, maybe higher temperature is correlated with higher halluciation? It's worth to try it out.
+Temperature: a hyperparameter that controls the randomness of the model's output. When the temperature is close to zero (e.g., 0.1), the model becomes deterministic; when the temperature is high (e.g., 2 or 3), the model's output becomes more random and creative. Okie, according to this information, maybe higher temperature is correlated with higher halluciation? It's worth to try it out.
   
 
 
