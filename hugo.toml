@@ -33,7 +33,7 @@ pygmentsUseClasses = true
 
   [params.homeInfoParams]
     Title = "Hi, Shel's here. Who's there?"
-    Content = " This is my learning hub. I learn new things through reading, building, and thinking. In my leisure time, I love 🎾, 🏃‍♀️, 📻, 📖, 🎨, ✈️, 🐶."
+    Content = " This is my learning hub. Update as per mood. I learn new things through reading, building, and thinking. In my leisure time, I love 🎾, 🏃‍♀️, 📻, 📖, 🎨, ✈️, 🐶."
 
   [[params.socialIcons]]
     name = "LinkedIn"
