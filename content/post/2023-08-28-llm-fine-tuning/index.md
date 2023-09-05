@@ -230,8 +230,6 @@ I trained using the AdamW optimizer (Loshchilov and Hutter, 2017). Accuracy was 
  002|0.0002|3B|0.9|0.9|184|0.001|378K|
  003|0.00002|3B|0.9|0.9|184|0.001|378K|
  004|0.000002|3B|0.9|0.9|184|0.001|378K|
-
-
 </div>  
 
 *To be continued...*
