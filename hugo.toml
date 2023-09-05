@@ -74,6 +74,12 @@ pygmentsUseClasses = true
     url = "/修/"
     weight = 60
 
+  [[menu.main]]
+    identifier = "vlog"
+    name = "vlog"
+    url = "/vlog/"
+    weight = 70
+
 [minify]
 disableXML = true
 # minifyOutput = true
