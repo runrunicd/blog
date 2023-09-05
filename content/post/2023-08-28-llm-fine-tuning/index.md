@@ -103,24 +103,6 @@ The sample model output on the test data *after* fine-tuning:
 
 #### Step 2: Fine tune the pre-trained model on the target task labeled training dataset.
 
-I trained using the AdamW optimizer (Loshchilov and Hutter, 2017). Accuracy was evaluated based on the same test dataset. 
-##### [*AdamW Optimizer*](https://github.com/young-geng/EasyLM/blob/main/docs/optimizer.md)
-
-
-<div style="width: 100%; max-height: 400px; overflow: auto; border: 1px solid #ccc; font-size: 12px;;">
-
- ID|LR|params|b1|b2|warmup steps|weight decay|tokens|accuracy
-|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|
- 001|0.002|3B|0.9|0.9|184|0.001|378K|87.24%
- 002|0.0002|3B|0.9|0.9|184|0.001|378K|
- 003|0.00002|3B|0.9|0.9|184|0.001|378K|
- 004|0.000002|3B|0.9|0.9|184|0.001|378K|
-
-
-</div>  
-
-*To be continued...*
-
 ```bash
 # Fine tune Tune a pre-trained model
 # total_steps: number of tokens divided by seq_length=1024
@@ -234,9 +216,25 @@ a soul-stirring documentary about the israeli/palestinian conflict as revealed t
 | 8  | 76.7%  | 
 | 5  | 83.3%  |  
 
-*To be continued ...*
 
 #### Hyperparameter tuning
+I trained using the AdamW optimizer (Loshchilov and Hutter, 2017). Accuracy was evaluated based on the same test dataset. 
+##### [*AdamW Optimizer*](https://github.com/young-geng/EasyLM/blob/main/docs/optimizer.md)
+
+
+<div style="width: 100%; max-height: 400px; overflow: auto; border: 1px solid #ccc; font-size: 12px;;">
+
+ ID|LR|params|b1|b2|warmup steps|weight decay|tokens|accuracy
+|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|
+ 001|0.002|3B|0.9|0.9|184|0.001|378K|87.24%
+ 002|0.0002|3B|0.9|0.9|184|0.001|378K|
+ 003|0.00002|3B|0.9|0.9|184|0.001|378K|
+ 004|0.000002|3B|0.9|0.9|184|0.001|378K|
+
+
+</div>  
+
+*To be continued...*
 
 
 ## How is the new way different from the traditional way of adapting AI?
