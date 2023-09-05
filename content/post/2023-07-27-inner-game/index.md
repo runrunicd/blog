@@ -12,10 +12,12 @@ Here, I'm documenting snippets of my conversations with my wish about a 10-year 
 #### 🔖 ☯️
 The growth in life is a process of integrating yin and yang. It is constantly changing, balancing, and integrating. What facilitates true growth in life? Pain and love. 
 
-#### 🔖 Girls to Women
+#### 🔖 From a girl to a women
 I hope to become a mature woman as time flies. I feel that women should not strive to seize and prove in a way that disrupts the natural balance of Yin and Yang. I hope that every girl believes in herself and falls in love with the beauty of herself at every stage, like individual flowers. They should help and appreciate each other without jealousy, and bloom with their own unique radiance.
 
-Women are not suited to wrap themselves in a tough shell to compete in the mainstream world. Instead, women should leverage their natural advantages, find the right path that nourishes them, and support their world with a heart full of ease, joy, and gratitude. This is the power of Mother Earth, the power of softness, the power of femininity.
+Women are not suited to wrap themselves in a tough shell to compete in the mainstream world. Instead, women should leverage their natural advantages, find the right path that nourishes them, and support their world with a heart full of ease, joy, and giving power. This is the power of Mother Earth, the power of femininity. 
+
+Tell the little girl in your heart every day, "I feel you, I see you, it's okay, I love you."
 
 #### 🔖 Big Love
 I completed a 6-month coach training program, where I listened to and shared many insights and concerns. I began to learn real connections between people, transcending race, culture, age, and social status. I have a strong feeling and epiphany: life unfolds and expands through love. If the universe supports our expansion, then the universe must be love. It's as if I've found the key to unlocking the door of the universe. I'm not entirely clear on this yet. I need to go back to life to observe, experience, and practice it.
