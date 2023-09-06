@@ -227,9 +227,9 @@ I trained using the AdamW optimizer (Loshchilov and Hutter, 2017). Accuracy was 
  ID|LR|params|b1|b2|warmup steps|weight decay|tokens|accuracy
 |---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|
  001|0.002|3B|0.9|0.9|184|0.001|378K|87.24%
- 002|0.0002|3B|0.9|0.9|184|0.001|378K|
- 003|0.00002|3B|0.9|0.9|184|0.001|378K|
- 004|0.000002|3B|0.9|0.9|184|0.001|378K|
+ 002|0.0002|3B|0.9|0.9|184|0.001|378K|50.00%
+ 003|0.00002|3B|0.9|0.9|184|0.001|378K|88.37%
+ 004|0.000002|3B|0.9|0.9|184|0.001|378K|88.74%
 </div>  
 
 *To be continued...*
@@ -260,7 +260,7 @@ The old way vs. new way of AI/ML development (Image Source: Snorkel AI)
 {{< /embedded_citation >}}
 
  
-* LLM fine-tuing application is to explore for unsupervised learning...*
+*LLM fine-tuing application is to explore for unsupervised learning...*
 
 
 ## References
