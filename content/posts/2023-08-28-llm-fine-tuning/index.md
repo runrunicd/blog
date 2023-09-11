@@ -275,7 +275,7 @@ The old way vs. new way of AI/ML development (Image Source: Snorkel AI)
 - The impacts of parameters fine-tuning on model performance (e.g. learning rate)
 - Exploration of LoRa in excelerating fine-tuning
 
-## Thought
+## Learning & Thought
 ### Requirements for LLM fine-tuning
 1. **Having a clear intention for the model to adapt.** We provide clear instructions by constructing a dataset with input and output, feeding it to the model, and then the model learns the goal of the task and the patterns in the data to perform the task.
 2. **Having a large labeled training dataset.** The larger and better quality of training dataset, the better model performance, as we observed through experimentation discussed above.

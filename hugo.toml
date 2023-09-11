@@ -48,37 +48,25 @@ pygmentsUseClasses = true
     identifier = "categories"
     name = "Categories"
     url = "/categories/"
-    weight = 30
+    weight = 20
 
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
-    weight = 40
+    weight = 30
 
   [[menu.main]]
     identifier = "posts"
     name = "Posts"
-    url = "/post/"
+    url = "/posts/"
     weight = 10
 
   [[menu.main]]
-    identifier = "books"
-    name = "Books"
-    url = "/books/"
-    weight = 50
-
-  [[menu.main]]
-    identifier = "修"
-    name = "修"
-    url = "/修/"
-    weight = 60
-
-  [[menu.main]]
-    identifier = "vlog"
-    name = "vlog"
+    identifier = "voice'log"
+    name = "Voice'log"
     url = "/vlog/"
-    weight = 70
+    weight = 40
 
 [minify]
 disableXML = true
