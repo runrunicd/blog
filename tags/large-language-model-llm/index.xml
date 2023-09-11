@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>large-language-model (LLM) on Shel (Run) Zhou&#39;s Blog</title>
+    <link>https://runrunicd.github.io/blog/tags/large-language-model-llm/</link>
+    <description>Recent content in large-language-model (LLM) on Shel (Run) Zhou&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Aug 2023 21:34:17 -0700</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/tags/large-language-model-llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build a Simple Framework for LLM Fine-Tuning on TPU &amp; Share Insight on Applications</title>
+      <link>https://runrunicd.github.io/blog/post/2023-08-28-llm-fine-tuning/</link>
+      <pubDate>Mon, 28 Aug 2023 21:34:17 -0700</pubDate>
+      
+      <guid>https://runrunicd.github.io/blog/post/2023-08-28-llm-fine-tuning/</guid>
+      <description>Introduction I recently delved into two insightful books: &amp;ldquo;Free Your Mind&amp;rdquo; and &amp;ldquo;The Inner Game of Tennis&amp;rdquo;. Both have shed light on the concept of building systems that encourage growth and resilience. It&amp;rsquo;s fascinating how everything starts with a simple framework ignited by a spark; it then gains momentum and expands through garnering support, optimization, and evolution.
+Take, for example, the process of scaling a business from the ground up. It often starts with a minimal viable product (MVP) built by an entrepreneur.</description>
+    </item>
+    
+  </channel>
+</rss>
