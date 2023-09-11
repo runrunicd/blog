@@ -48,13 +48,13 @@ pygmentsUseClasses = true
     identifier = "categories"
     name = "Categories"
     url = "/categories/"
-    weight = 20
+    weight = 30
 
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
-    weight = 30
+    weight = 40
 
   [[menu.main]]
     identifier = "posts"
@@ -66,7 +66,7 @@ pygmentsUseClasses = true
     identifier = "voice'log"
     name = "Voice'log"
     url = "/vlog/"
-    weight = 40
+    weight = 20
 
 [minify]
 disableXML = true
