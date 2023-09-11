@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on RZ&#39;s Blog</title>
-    <link>https://runzhou.github.io/blog/posts/</link>
-    <description>Recent content in Posts on RZ&#39;s Blog</description>
+    <title>Posts on Shel (Run) Zhou&#39;s Blog</title>
+    <link>https://runrunicd.github.io/blog/posts/</link>
+    <description>Recent content in Posts on Shel (Run) Zhou&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Aug 2023 21:34:17 -0700</lastBuildDate><atom:link href="https://runzhou.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Aug 2023 21:34:17 -0700</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Simple Framework for LLM Fine-Tuning on TPU &amp; Some Insights</title>
-      <link>https://runzhou.github.io/blog/posts/post20230829/</link>
+      <title>The Inner Game</title>
+      <link>https://runrunicd.github.io/blog/posts/2023-07-27-inner-game/</link>
+      <pubDate>Thu, 27 Jul 2023 17:00:01 -0700</pubDate>
+      
+      <guid>https://runrunicd.github.io/blog/posts/2023-07-27-inner-game/</guid>
+      <description>Here, I&amp;rsquo;m documenting snippets of my conversations with my wish about a 10-year vision. In Chinese, 图图徐之.
+🔖 ☯️ The growth in life is a process of integrating yin and yang. It is constantly changing, balancing, and integrating. What facilitates true growth in life? Pain and love.
+🔖 From a girl to a women I hope to become a mature woman as time flies. I feel that women should not strive to seize and prove in a way that disrupts the natural balance of Yin and Yang.</description>
+    </item>
+    
+    <item>
+      <title>Build a Simple Framework for LLM Fine-Tuning on TPU &amp; Share Insight on Applications</title>
+      <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-fine-tuning/</link>
       <pubDate>Mon, 28 Aug 2023 21:34:17 -0700</pubDate>
       
-      <guid>https://runzhou.github.io/blog/posts/post20230829/</guid>
-      <description>Introduction I recently delved into two insightful books: &amp;ldquo;Free Your Mind&amp;rdquo; and &amp;ldquo;The Inner Game of Tennis&amp;rdquo;. Both have illuminated the idea of constructing systems that foster growth and resilience. Consider the journey of scaling a business from scratch. Typically, it starts with a simple MVP crafted by an entrepreneur. As it gains traction in the market, funding and skilled individuals gravitate towards it, refining and expanding the burgeoning product. Similarly, envision establishing a balanced lifestyle anchored by five tenets: health, family, friends, work, and spirituality.</description>
+      <guid>https://runrunicd.github.io/blog/posts/2023-08-28-llm-fine-tuning/</guid>
+      <description>Introduction I recently delved into two insightful books: &amp;ldquo;Free Your Mind&amp;rdquo; and &amp;ldquo;The Inner Game of Tennis&amp;rdquo;. Both have shed light on the concept of building systems that encourage growth and resilience. It&amp;rsquo;s fascinating how everything starts with a simple framework ignited by a spark; it then gains momentum and expands through garnering support, optimization, and evolution.
+Take, for example, the process of scaling a business from the ground up. It often starts with a minimal viable product (MVP) built by an entrepreneur.</description>
+    </item>
+    
+    <item>
+      <title>Learning Notes on Large Language Model (Dumping Knowledge for Now)</title>
+      <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</link>
+      <pubDate>Tue, 01 Aug 2023 13:33:00 -0700</pubDate>
+      
+      <guid>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</guid>
+      <description>Messy &amp;hellip; Introduction to Large Language Model Auto-regressive transformers are pretrained on an extensive corpus of self-supervised data, followed by alignment with human preferences via techniques such as Reinforcement Learning with Human Feedback (RLHF).
+Training methodology is simple but is limited to a few players with high computational requirements
+Public pretrained LLM
+BLOOM (Scao et al., 2022) LLaMa 1 (Touvron et al., 2023) LLaMa 2, LLaMa 2-Chat which is optimized for dialogue use cases Falcon (Penedo et al.</description>
     </item>
     
   </channel>
