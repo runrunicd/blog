@@ -1,8 +1,8 @@
 ---
-title: "Build a Simple Framework for LLM Fine-Tuning on TPU & Applications"
+title: "Build a Simple Framework for LLM Fine-Tuning on TPU & Share Insight on Applications"
 date: 2023-08-28T21:34:17-07:00
 draft: false
-tags: ["large-language-model"]
+tags: ["large-language-model (LLM)"]
 categories: ["AI/ML"]
 ---
 
@@ -13,12 +13,12 @@ Take, for example, the process of scaling a business from the ground up. It ofte
 
 Although I had come across these principles in books, it wasn't until recently that I experienced the thrill of reconstructing, enhancing, and fine-tuning these systems to adapt to the present needs and conditions.
 
-With that in mind, I'm actively applying this philosophy to my exploration of LLM Fine-Tuning. I will share my learning notes, insights, and code in this post.
+With that in mind, I'm actively applying this philosophy to my exploration of LLM Fine-Tuning. I will share my learning notes, insight, and code in this post.
 
 ## Goals
-- Learn the new way of adapting AI to accomplish a binary classification task by building a simple framework of LLM fine-tuning.
-- Learn how to optimize and evaluate AI performance with various conditions or optimization techniques (e.g. training data size).
-- Share insights about the new way vs. the traditional way of adapting AI.
+- Learn the new way of adapting AI to accomplish a binary predictive task by building a simple framework of LLM fine-tuning.
+- Learn how to optimize and evaluate AI performance with various conditions or optimization techniques, including data curation, data size, hyperparameter tuninge etc.
+- Share insight about the new way vs. the traditional way of adapting AI, requirements for LLM fine-tuning, and ideas for business use cases.
 
 ## How to fine tune an AI Model (LLM) to accomplish a binary classification task?
 I've had fun to generate content by ChatGPT from OpenAI in response to prompts, but how does one train (or fine-tune) a LLM to accomplish a target prediction task? I've tailored a task to predict the sentiments of movie reviews from Rotten Tomatoes, using the [OpenLLaMA](https://github.com/openlm-research/open_llama) which is the permissively licensed open source reproduction of Meta AI's [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) large language model. 
@@ -35,7 +35,7 @@ I've had fun to generate content by ChatGPT from OpenAI in response to prompts, 
 
 #### Setup: The following resources are helpful in accomplishing the task.
 ##### Installation & download
-✅ Set up Google Cloud with GPU/TPU (Note: I have TPU. EasyLM is built for GPU as well)  
+✅ Set up Google Cloud with GPU/TPU (Note: This example was built using TPU. EasyLM is built for GPU as well)  
 ✅ [Install EasyLM](https://github.com/young-geng/EasyLM)  
 ✅ [Download OpenLLaMA version 3b v2](https://huggingface.co/openlm-research/open_llama_3b_v2/tree/main?clone=true)  
 ✅ [Download Rotten Tomatoes data](https://huggingface.co/datasets/MrbBakh/Rotten_Tomatoes)  
@@ -233,6 +233,10 @@ I trained using the AdamW optimizer (Loshchilov and Hutter, 2017). Accuracy was 
 </div>  
 
 *To be continued...*
+*epoch number, weight decay*
+
+##### Other hyperparameters
+Temperature is a hyperparameter that influences the level of randomness in a model's output. A lower temperature, like 0.1, makes the model more deterministic, while a higher temperature, such as 2 or 3, increases randomness and creativity. It might be worth experimenting with higher temperatures to see if they lead to more hallucinations. However, it's important to note that the model already outputs probabilities for next word predictions and can adjust its level of determinism or creativity accordingly, so tuning the temperature may not be necessary.
 
 
 ## How is the new way different from the traditional way of adapting AI?
@@ -241,7 +245,7 @@ When building the framework and fine-tuning the LLM, I began to think how this a
 #### The Traditional Way
 Traditionally, data scientists are trained in academic settings to focus on algorithms. These algorithms serve as specialized tools in a toolkit, each designed to solve specific problems. For instance, supervised machine learning algorithms are employed to discern patterns and make predictions when ground truth labels are available. Commonly used algorithms include logistic regression for predicting binary events and XGBoost for class prediction, where trade-offs between precision and recall are managed through threshold selections. In the realm of unsupervised machine learning, where the task is to identify clusters without ground truth, classical algorithms like k-means, hierarchical clustering, DBSCAN, and Gaussian Mixture Models are often used.
 
-However, during my experience in the industry, I've discovered that data quality and feature engineering are equally crucial for adapting a machine learning model to achieve high accuracy in business tasks. Why is this the case? My intuition suggests that human intentions and insights are encapsulated within these two components. Data quality ensures that clear ground truth labels are provided to the model, while feature engineering infuses business logic or common sense into the model by clarifying and filtering out noise.
+However, during my experience in the industry, I've discovered that data quality and feature engineering are equally crucial for adapting a machine learning model to achieve high accuracy in business tasks. Why is this the case? My intuition suggests that human intention and insight are encapsulated within these two components. Data quality ensures that clear ground truth labels are provided to the model, while feature engineering infuses business logic or common sense into the model by clarifying and filtering out noise.
 
 <br></br>
 
@@ -252,7 +256,7 @@ The model-centric approach vs. data-centric approach (Image Source: generated by
 {{< /embedded_citation >}}
 
 #### The New Way
-In contrast, when adapting a finely-tuned Large Language Model (LLM) to perform a similar predictive task, the architecture of the model is essentially fixed. The pre-trained model already has many capabilities. How, then, do I guide the model to accomplish a specific task? Mostly, this is done through careful data preparation. This data encapsulates both my intentions and any available ground truth, particularly in the context of supervised learning.
+In contrast, when adapting a fine-tuned Large Language Model (LLM) to perform a similar predictive task, the architecture of the model is essentially fixed. The pre-trained model already has many capabilities. How, then, do I guide the model to accomplish a specific task? Mostly, this is done through careful data preparation. This data encapsulates both my intentions and any available ground truth, particularly in the context of supervised learning.
 
 ![old_way](images/new_vs_old_ai_dev.png#center)
 {{< embedded_citation >}}
@@ -271,13 +275,29 @@ The old way vs. new way of AI/ML development (Image Source: Snorkel AI)
 - The impacts of parameters fine-tuning on model performance (e.g. learning rate)
 - Exploration of LoRa in excelerating fine-tuning
 
-## Thoughts
-#### Data collection & curation
-I'm reading white paper and human evaluation is now golden standard to assess model performance. I'm thinking for personalized GPT, what would be the best interface to collect personal perference?
-#### Application
-First of all, there's text lol... Can we mine insights and provide data analysis? Can we predict sentiments (BloombergGPT does it) to signal trends? 
-#### Fine-tuning
-Temperature: a hyperparameter that controls the randomness of the model's output. When the temperature is close to zero (e.g., 0.1), the model becomes deterministic; when the temperature is high (e.g., 2 or 3), the model's output becomes more random and creative. Okie, according to this information, maybe higher temperature is correlated with higher halluciation? It's worth to try it out.
+## Thought
+### Requirements for LLM fine-tuning
+1. **Having a clear intention for the model to adapt.** We provide clear instructions by constructing a dataset with input and output, feeding it to the model, and then the model learns the goal of the task and the patterns in the data to perform the task.
+2. **Having a large labeled training dataset.** The larger and better quality of training dataset, the better model performance, as we observed through experimentation discussed above.
+3. **The context of the application and instructions are static.** The model's ability to adapt is limited to the instructions and context provided in its training dataset. To ensure optimal performance, it is important to have a relatively fixed set of instructions. However, if there are significant changes or updates in the desired outcomes, it may be necessary to re fine-tune the model with new data periodically. This ensures that the model stays up-to-date and aligns with the evolving requirements of its application.
+
+
+### Data collection & curation
+I'm reading white paper. I have learned that human evaluation is now golden standard to assess model performance. Here are some insight on the important facets of data collection and curation.  
+
+1. **To train a safe and intelligent AI, we require a team of experts with integrity and domain knowledge across various fields to implement best practices and instructions during the data preparation stage.** This is an exciting concept because it represents the convergence of humanity and technology.
+2. **How to leverage technologies to make data collection and curation more efficient?** I have read that the current best practice is to hire data vendors and provide them with instructions to curate data. Red-teaming, which involves a group of experts conducting sanity checks on long-tailed safety issues, is used to ensure AI safety. I need to further investigate this topic here.
+
+### Business Use Cases
+First of all, there's text 🫠. This is a list of business tasks that are interesting to explore.  
+
+1. **[Finance] Sentiment prediction.** For example, BloombergGPT.
+2. **[Supply chain] Summarization and prioritization of planning alerts.** I'm currently working at an early-stage startup for supply chain planners, our advisor and I have brainstromed this use case.
+3. **[Healthcare] Medical notes information extraction.** Medical notes information extraction automates medication duration calculation and disease type classification. It extracts relevant data from medical documents, enabling the automated determination of how long a medication should be taken and categorizing diseases based on symptoms and diagnoses. This improves efficiency and accuracy in healthcare.
+4. **[Text-based product] Integration of ChatGPT API to provide copilot services.** Summarize notes, enhance recommender system on knowledge base, brainstorming...
+5. **[Data analytics]** Basic data analysis, dashboarding, SQL writing.
+
+When I get a chance, I'd like to build prototypes for each use case and share insight.
   
 
 
