@@ -9,10 +9,20 @@ weight: 1
 
 Here, I'm documenting snippets of my conversations with my wish about a 10-year vision. In Chinese, 图图徐之.
 
+#### 🔖 Self-love
+Recently, I returned to my hometown to be with my parents. I reunited with my mom after 4.5 years, largely due to COVID. She is a beautiful, strong, and independent woman, whose characteristics are quite different from mine. Seeing her age with such grace and resilience brought forth deep reflections on the concept of self-love. What is self-love, truly? It wasn't until I read the following text that I realized my insights had already been summarized by those before me.
+
+"As life unfolds, we all remember times when we were innocent, open-hearted, and generously gave our energy to others. Yet, such traits sometimes go against the grain of a world that can be reserved and self-centered. As we grow and strive to fit into society, we often learn through trial and error, coming home burdened with trauma, pain, and intense emotion. At times, it feels as if we're forced to experience life, getting tainted by the fears and weaknesses that come with our shared humanity. Innocence becomes overshadowed by trauma, making us yearn for escape. But, if we take the time to heal ourselves, we can find acceptance and understanding. Through this journey, we begin to truly respect and understand the uniqueness of each individual, eventually learning to love ourselves and others unconditionally. 
+
+Subsequently developing the spiritual qualities of compassion, softness, and humility. In Chinese, this is called 慈悲. This is the essential path to the maturation of self-love. Self-love and loving others are essentially the same thing (Hu, Yinmeng, Psychology Monthly, September 2007 issue)."
+
+People always seek pleasure and avoid pain, but if we are willing to cherish solitude and keep company with our emotions, we will receive the gift behind it. In this regard, I'm awesome!
+
+
 #### 🔖 ☯️
 The growth in life is a process of integrating yin and yang. It is constantly changing, balancing, and integrating. What facilitates true growth in life? Pain and love. 
 
-#### 🔖 From a girl to a women
+#### 🔖 From Girls to Women
 I hope to become a mature woman as time flies. I feel that women should not strive to seize and prove in a way that disrupts the natural balance of Yin and Yang. I hope that every girl believes in herself and falls in love with the beauty of herself at every stage, like individual flowers. They should help and appreciate each other without jealousy, and bloom with their own unique radiance.
 
 Women are not suited to wrap themselves in a tough shell to compete in the mainstream world. Instead, women should leverage their natural advantages, find the right path that nourishes them, and support their world with a heart full of ease, joy, and giving power. This is the power of Mother Earth, the power of femininity. 
@@ -26,7 +36,7 @@ Everyone is born 'broken', as those who read the Bible should know. My experienc
 
 After I experienced these feelings, a friend of mine, who is older than me and a Christian, said: 'Do you know? The Bible ultimately says that God is love.
 
-#### 🔖 Enjoy The Pain
+#### 🔖 Enjoy the Pain
 Respond to pain with a passionate kiss. I'm grateful for my simple and wonderful childhood, and also thankful for the growing pains of life; they are gifts bestowed by fate. I used to see the world through rose-colored glasses, but now I prefer the real world, without expectations, but with the power of belief. I'm embarking on a hero's journey.
 
 #### 🔖 The Meaning of Life
@@ -39,7 +49,7 @@ The calendar years 2022 - 2023 are the milestones for my spiritual growth. I fee
 
 
 #### 🔖 The Relationship Between Knowledge and Wisdom
-Knowledge is the projection of wisdom, which comes from God through gifts—experiences and reflection.
+Knowledge is the projection of wisdom, which comes from God through gifts — experiences and reflection.
 
 
 #### 🔖 Be Creative
