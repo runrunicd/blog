@@ -6,24 +6,48 @@
     <description>Recent content on Shel (Run) Zhou&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Aug 2023 21:34:17 -0700</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Simple Framework for LLM Fine-Tuning on TPU &amp; Some Insights</title>
-      <link>https://runrunicd.github.io/blog/post/2023-08-28-llm-fine-tuning/</link>
+      <title>The Inner Game</title>
+      <link>https://runrunicd.github.io/blog/posts/2023-07-27-inner-game/</link>
+      <pubDate>Thu, 27 Jul 2023 17:00:01 -0700</pubDate>
+      
+      <guid>https://runrunicd.github.io/blog/posts/2023-07-27-inner-game/</guid>
+      <description>Here, I&amp;rsquo;m documenting snippets of my conversations with my wish about a 10-year vision. In Chinese, 图图徐之.
+🔖 Self-love Recently, I returned to my hometown to be with my parents. I reunited with my mom after 4.5 years, largely due to COVID. She is a beautiful, strong, and independent woman, whose characteristics are quite different from mine. Seeing her age with such grace and resilience brought forth deep reflections on the concept of self-love.</description>
+    </item>
+    
+    <item>
+      <title>Embeddings Use Cases</title>
+      <link>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings-use-cases/</link>
+      <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings-use-cases/</guid>
+      <description>Introduction When I first heard of text embeddings, it sounds perplexed. I was handed a 800-page Nautual Language Processing textbook by my tech lead and I did not finish reading. Now, with open AI models and capabilities, it&amp;rsquo;s timing to learn and broadly leverage embeddings to achieve many tasks with easy access to embeddings.
+Let&amp;rsquo;s start exploring:
+Clustering Classification Anomaly detection Search Recommendations Goals Summarize key terminology, concept, and usage of text embeddings Write notebooks for comman tasks that can benefit from text embeddings Brainstorm use cases and ideas for improvements What do you need to know about embeddings?</description>
+    </item>
+    
+    <item>
+      <title>Build a Simple Framework for LLM Fine-Tuning on TPU &amp; Share Insight on Applications</title>
+      <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-fine-tuning/</link>
       <pubDate>Mon, 28 Aug 2023 21:34:17 -0700</pubDate>
       
-      <guid>https://runrunicd.github.io/blog/post/2023-08-28-llm-fine-tuning/</guid>
+      <guid>https://runrunicd.github.io/blog/posts/2023-08-28-llm-fine-tuning/</guid>
       <description>Introduction I recently delved into two insightful books: &amp;ldquo;Free Your Mind&amp;rdquo; and &amp;ldquo;The Inner Game of Tennis&amp;rdquo;. Both have shed light on the concept of building systems that encourage growth and resilience. It&amp;rsquo;s fascinating how everything starts with a simple framework ignited by a spark; it then gains momentum and expands through garnering support, optimization, and evolution.
 Take, for example, the process of scaling a business from the ground up. It often starts with a minimal viable product (MVP) built by an entrepreneur.</description>
     </item>
     
     <item>
-      <title>The Inner Game</title>
-      <link>https://runrunicd.github.io/blog/post/2023-07-27-spiritual-growth/</link>
-      <pubDate>Thu, 27 Jul 2023 17:00:01 -0700</pubDate>
+      <title>Learning Notes on Large Language Model (Dumping Knowledge for Now)</title>
+      <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</link>
+      <pubDate>Tue, 01 Aug 2023 13:33:00 -0700</pubDate>
       
-      <guid>https://runrunicd.github.io/blog/post/2023-07-27-spiritual-growth/</guid>
-      <description>I&amp;rsquo;ll share my learning about who I am, what I can do, and my thought on what is life&amp;hellip;</description>
+      <guid>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</guid>
+      <description>Messy &amp;hellip; Introduction to Large Language Model Auto-regressive transformers are pretrained on an extensive corpus of self-supervised data, followed by alignment with human preferences via techniques such as Reinforcement Learning with Human Feedback (RLHF).
+Training methodology is simple but is limited to a few players with high computational requirements
+Public pretrained LLM
+BLOOM (Scao et al., 2022) LLaMa 1 (Touvron et al., 2023) LLaMa 2, LLaMa 2-Chat which is optimized for dialogue use cases Falcon (Penedo et al.</description>
     </item>
     
   </channel>
