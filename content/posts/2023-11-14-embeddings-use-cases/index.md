@@ -7,7 +7,7 @@ categories: ["AI/ML"]
 ---
 
 ## Introduction
-When I first heard of text embeddings, it sounds perplexed. I was handed a 800-page Nautual Language Processing textbook by my tech lead and I did not finish reading. Now, with open AI models and capabilities, it's timing to learn and broadly leverage embeddings to achieve many tasks with easy access to embeddings.
+When I first heard about text embeddings, I was perplexed. My tech lead handed me an 800-page Natural Language Processing textbook, but I did not finish reading it. Now, with the capabilities of OpenAI models, it's time to learn and broadly leverage embeddings to accomplish many tasks, thanks to easy access to these embeddings. 
 
 Let's start exploring:
 - Clustering
@@ -17,18 +17,19 @@ Let's start exploring:
 - Anomaly detection
 
 ## Goals
+The ultimate goal is to become familiar with the framework of leveraging embeddings to accomplish applicable tasks. The best way to learn and improvise is first by getting your hands dirty with the data and tools. Optimization and deep-diving happen later naturally.
 - Summarize key terminology, concept, and usage of text embeddings
-- Write notebooks for comman tasks that can benefit from text embeddings
+- Write notebooks for common tasks that can benefit from text embeddings
 - Brainstorm use cases and ideas for improvements
 
 ## What do you need to know about embeddings?
 - An embedding is a vector (list) of floating point numbers, representing a text string.
 - The distance between two embeddings (vectors) measures their relatedness. The smaller the distance, the higher they are related, vice versa.
-- t-SNE is used to transform the embeddings of high-dimension to 2D for visualization.
+- t-SNE, which stands for t-distributed Stochastic Neighbor Embedding, is a machine learning algorithm used primarily for the task of dimensionality reduction, particularly well-suited for the visualization of high-dimensional datasets. It was developed by Laurens van der Maaten and Geoffrey Hinton in 2008. Here's a brief overview of what t-SNE does and how it work.
 
 ## Use cases
 ### Clustering
-Can we identify clusters among movie reviews and their themes? Let's use [Rotten Tomatoes dataset](https://huggingface.co/datasets/rotten_tomatoes). To obtain text embeddings, let's use OpenAI's embeddings API and the model text-embedding-ada-002 is recommended.
+Can we identify clusters among movie reviews and their themes? Let's use [Rotten Tomatoes dataset](https://huggingface.co/datasets/rotten_tomatoes). To obtain text embeddings, let's use OpenAI's embeddings API and the model text-embedding-ada-002 is recommended. Note: all the code and data are open to public.
 
 ```bash
 # Ensure you have your API key set in your environment per the README: https://github.com/openai/openai-python#usage
@@ -241,7 +242,7 @@ Cluster 4 Theme:  Disappointment with the quality of the product or experience.
 
 ## Brainstorming Business Use Cases
 #### Clustering
-- Assistant - categorize documents (Doc2Vec), identify collaborators, mood patterns
+- Assistant - categorize documents (Doc2Vec), identify collaborators, discover mood patterns on notes & diary
 - Understand user behavior for personalization - recommendations, search, mood
 - Identify fraudulent users
 - Triage and tag tickets
