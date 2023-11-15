@@ -6,22 +6,31 @@
     <description>Recent content in Tags on Shel (Run) Zhou&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Aug 2023 21:34:17 -0700</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>large-language-model (LLM)</title>
-      <link>https://runrunicd.github.io/blog/tags/large-language-model-llm/</link>
-      <pubDate>Mon, 28 Aug 2023 21:34:17 -0700</pubDate>
+      <title>embeddings</title>
+      <link>https://runrunicd.github.io/blog/tags/embeddings/</link>
+      <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://runrunicd.github.io/blog/tags/large-language-model-llm/</guid>
+      <guid>https://runrunicd.github.io/blog/tags/embeddings/</guid>
       <description></description>
     </item>
     
     <item>
       <title>large-language-model</title>
       <link>https://runrunicd.github.io/blog/tags/large-language-model/</link>
-      <pubDate>Tue, 01 Aug 2023 13:33:00 -0700</pubDate>
+      <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://runrunicd.github.io/blog/tags/large-language-model/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>large-language-model (LLM)</title>
+      <link>https://runrunicd.github.io/blog/tags/large-language-model-llm/</link>
+      <pubDate>Mon, 28 Aug 2023 21:34:17 -0700</pubDate>
+      
+      <guid>https://runrunicd.github.io/blog/tags/large-language-model-llm/</guid>
       <description></description>
     </item>
     

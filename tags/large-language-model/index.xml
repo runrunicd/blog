@@ -6,7 +6,18 @@
     <description>Recent content in large-language-model on Shel (Run) Zhou&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Aug 2023 13:33:00 -0700</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://runrunicd.github.io/blog/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Embeddings Use Cases</title>
+      <link>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings-use-cases/</link>
+      <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings-use-cases/</guid>
+      <description>Introduction When I first heard of text embeddings, it sounds perplexed. I was handed a 800-page Nautual Language Processing textbook by my tech lead and I did not finish reading. Now, with open AI models and capabilities, it&amp;rsquo;s timing to learn and broadly leverage embeddings to achieve many tasks with easy access to embeddings.
+Let&amp;rsquo;s start exploring:
+Clustering Search Recommendations Classification Anomaly detection Goals Summarize key terminology, concept, and usage of text embeddings Write notebooks for comman tasks that can benefit from text embeddings Brainstorm use cases and ideas for improvements What do you need to know about embeddings?</description>
+    </item>
+    
     <item>
       <title>Learning Notes on Large Language Model (Dumping Knowledge for Now)</title>
       <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</link>
