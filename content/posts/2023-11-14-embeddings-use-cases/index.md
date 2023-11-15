@@ -242,7 +242,7 @@ Cluster 4 Theme:  Disappointment with the quality of the product or experience.
 
 ## Brainstorming Business Use Cases
 #### Clustering
-- Assistant - categorize documents (Doc2Vec), identify collaborators, discover mood patterns on notes & diary
+- Assistant - categorize documents (Doc2Vec), identify collaborators, discover mood patterns on notes & diary, bookmarks
 - Understand user behavior for personalization - recommendations, search, mood
 - Identify fraudulent users
 - Triage and tag tickets
