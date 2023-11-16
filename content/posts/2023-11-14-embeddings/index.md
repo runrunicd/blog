@@ -19,7 +19,7 @@ Let's start exploring:
 ## Goals
 The ultimate goal is to become familiar with the framework of leveraging embeddings to accomplish applicable tasks. The best way to learn and improvise is first by getting your hands dirty with the data and tools. Optimization and deep-diving happen later naturally.
 - Summarize key terminology, concept, and usage of text embeddings
-- Build the basic framework and standaridized iPython notebooks for each use case that could benefit from text embeddings
+- Build the basic framework and standardized iPython notebooks for each use case that could benefit from text embeddings
 - Brainstorm business use cases and ideas for improvements
 
 ## What do you need to know about embeddings?
