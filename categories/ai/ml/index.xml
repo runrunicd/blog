@@ -8,10 +8,10 @@
     <language>en-us</language><atom:link href="https://runrunicd.github.io/blog/categories/ai/ml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Embeddings Use Cases</title>
-      <link>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings-use-cases/</link>
+      <link>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings/</link>
       <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings-use-cases/</guid>
+      <guid>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings/</guid>
       <description>Introduction When I first heard about text embeddings, I was perplexed. My tech lead handed me an 800-page Natural Language Processing textbook, but I did not finish reading it. Now, with the capabilities of OpenAI models, it&amp;rsquo;s time to learn and broadly leverage embeddings to accomplish many tasks, thanks to easy access to these embeddings.
 Let&amp;rsquo;s start exploring:
 Clustering Search Recommendations Classification Anomaly detection Goals The ultimate goal is to become familiar with the framework of leveraging embeddings to accomplish applicable tasks.</description>
