@@ -27,7 +27,7 @@ The ultimate goal is to become familiar with the framework of leveraging embeddi
 - The distance between two embeddings (vectors) measures their relatedness. The smaller the distance, the higher they are related, vice versa.
 - t-SNE, which stands for t-distributed Stochastic Neighbor Embedding, is a machine learning algorithm used primarily for the task of dimensionality reduction, particularly well-suited for the visualization of high-dimensional datasets. It was developed by Laurens van der Maaten and Geoffrey Hinton in 2008. Here's a brief overview of what t-SNE does and how it work.
 
-## Use cases
+## Use Cases
 ### Clustering
 Can we identify clusters among movie reviews and their themes? Let's use [Rotten Tomatoes dataset](https://huggingface.co/datasets/rotten_tomatoes). To obtain text embeddings, let's use OpenAI's embeddings API and the model text-embedding-ada-002 is recommended. Note: all the code and data are open to public.
 
@@ -148,49 +148,24 @@ for category, color in enumerate(["gold", "turquoise", "darkorange", "purple"]):
     
 plt.title("Clusters identified visualized in language 2d using t-SNE")
 ```
+<br></br>
+#### 2D visualization
+We can identify the clusters by the differently colored dense cores.  
+![2D visualization of clusters](images/clusters_2d.png#center)
+<br></br>
+
+#### 3D visualization
+Sometimes, it's helpful to identify clusters in 3D visualization as there might be more than two factors critical in classifying the move reviews.
+{{< plotly >}}
+<iframe width="100%" height="550" name="iframe", src="iframes/clusters_3d.html"></iframe>
+{{< /plotly >}}
 
 <br></br>
-We can tell the clusters by the dense cores colored differently.
-![old_way](images/clusters.png#center)
 
-<br></br>
-
+#### Cluster theme
 Furthermore, we can leverage the model text-davinci-003 to summarize the theme for each cluster of movie reviews on Rotten Tomatoes.
 
-```bash
-# Reading a review which belong to each group.
-rev_per_cluster = n_clusters
-
-for i in range(n_clusters):
-    print(f"Cluster {i} Theme:", end=" ")
-
-    reviews = "\n".join(
-        df[df['cluster'] == i]
-        .text.str.replace("Title: ", "")
-        .str.replace("\n\nContent: ", ":  ")
-        .sample(rev_per_cluster, random_state=42)
-        .values
-    )
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=f'What do the following customer reviews have in common?\n\nCustomer reviews:\n"""\n{reviews}\n"""\n\nTheme:',
-        temperature=0,
-        max_tokens=64,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0,
-    )
-    print(response["choices"][0]["text"].replace("\n", ""))
-
-    sample_cluster_rows = df[df.cluster == i].sample(rev_per_cluster, random_state=42)
-    for j in range(rev_per_cluster):
-        print(sample_cluster_rows.label.values[j], end=", ")
-        print(sample_cluster_rows.text.str[:70].values[j])
-
-    print("-" * 100)
-```
-<br></br>
-Let's summarize the cluster, the mean sentiment, and the theme. The cluster 2 is very negative, expressing disappointment with the movies. In contrast, the cluster 3 is very positive with praise. Finally, cluster 1, 0, and 4 are closer to negative reviews but are not as disappointed as cluster 2.
+Let’s summarize the clusters, the mean sentiment, and the themes. Cluster 2 is very negative, expressing disappointment with the movies. In contrast, cluster 3 is very positive, with praise. Finally, clusters 1, 0, and 4 are closer to negative reviews but are not as disappointed as cluster 2.
 
 | Cluster | Mean | Theme |
 |---------|------|------|
@@ -239,13 +214,57 @@ Cluster 4 Theme:  Disappointment with the quality of the product or experience.
 ----------------------------------------------------------------------------------------------------
 ```
 
+```bash
+# Reading a review which belong to each group.
+rev_per_cluster = n_clusters
 
-## Brainstorming Business Use Cases
-#### Clustering
-- Assistant - categorize documents (Doc2Vec), identify collaborators, discover mood patterns on notes & diary, bookmarks
-- Understand user behavior for personalization - recommendations, search, mood
-- Identify fraudulent users
-- Triage and tag tickets
+for i in range(n_clusters):
+    print(f"Cluster {i} Theme:", end=" ")
+
+    reviews = "\n".join(
+        df[df['cluster'] == i]
+        .text.str.replace("Title: ", "")
+        .str.replace("\n\nContent: ", ":  ")
+        .sample(rev_per_cluster, random_state=42)
+        .values
+    )
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=f'What do the following customer reviews have in common?\n\nCustomer reviews:\n"""\n{reviews}\n"""\n\nTheme:',
+        temperature=0,
+        max_tokens=64,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0,
+    )
+    print(response["choices"][0]["text"].replace("\n", ""))
+
+    sample_cluster_rows = df[df.cluster == i].sample(rev_per_cluster, random_state=42)
+    for j in range(rev_per_cluster):
+        print(sample_cluster_rows.label.values[j], end=", ")
+        print(sample_cluster_rows.text.str[:70].values[j])
+
+    print("-" * 100)
+```
+
+#### Insight
+The movie reviews can be clearly classified into 2 categories: positive reviews (cluster 3) and negative reviews (cluster 2, 1, 0, & 4). With the 2d/3d visuals, we can zoom in and see that the orange postive reviews can be distinguished from the other three negative review clusters. 
+
+## Further Exploration
+- Other use cases and their application
+
+## Learning & Thought
+### Clustering Business Use Cases
+1. [Assistant] Categorization tasks 
+    - Categorize documents (Doc2Vec)
+    - Identify collaborators
+    - Discover mood patterns from notes & diary
+    - Organize bookmarks
+2. [Personalization] 
+    - Understand user behavior - recommendations, search, mood
+3. [Operations] 
+    - Identify fraudulent users
+    - Triage and tag tickets or reports
 
 
 
