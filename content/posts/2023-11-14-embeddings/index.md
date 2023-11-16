@@ -7,7 +7,7 @@ categories: ["AI/ML"]
 ---
 
 ## Introduction
-When I first heard about text embeddings, I was perplexed. My tech lead handed me an 800-page Natural Language Processing textbook, but I did not finish reading it. Now, with the capabilities of OpenAI models, it's time to learn and broadly leverage embeddings to accomplish many tasks, thanks to easy access to these embeddings. 
+When I first heard about text embeddings, I was perplexed. My tech lead handed me an 800-page Natural Language Processing textbook, but I did not finish reading it. Now, with the capabilities of OpenAI models, it's time to learn and broadly leverage embeddings to accomplish many tasks that were hard be achieved by human labor or simple data analysis, thanks to easy access to these embeddings. 
 
 Let's start exploring:
 - Clustering
@@ -19,8 +19,8 @@ Let's start exploring:
 ## Goals
 The ultimate goal is to become familiar with the framework of leveraging embeddings to accomplish applicable tasks. The best way to learn and improvise is first by getting your hands dirty with the data and tools. Optimization and deep-diving happen later naturally.
 - Summarize key terminology, concept, and usage of text embeddings
-- Write notebooks for common tasks that can benefit from text embeddings
-- Brainstorm use cases and ideas for improvements
+- Build the basic framework and standaridized iPython notebooks for each use case that could benefit from text embeddings
+- Brainstorm business use cases and ideas for improvements
 
 ## What do you need to know about embeddings?
 - An embedding is a vector (list) of floating point numbers, representing a text string.
@@ -29,7 +29,7 @@ The ultimate goal is to become familiar with the framework of leveraging embeddi
 
 ## Use Cases
 ### Clustering
-Can we identify clusters among movie reviews and their themes? Let's use [Rotten Tomatoes dataset](https://huggingface.co/datasets/rotten_tomatoes). To obtain text embeddings, let's use OpenAI's embeddings API and the model text-embedding-ada-002 is recommended. Note: all the code and data are open to public.
+Can we identify clusters among movie reviews and their themes? It's going to be difficult to review through all reviews and identify clusters of movie reviews. With AI, we can achieve that and I'll demo it here. Let's use [Rotten Tomatoes dataset](https://huggingface.co/datasets/rotten_tomatoes). To obtain text embeddings, let's use OpenAI's embeddings API and the model text-embedding-ada-002 is recommended. Note: all the code and data are open to public.
 
 ```bash
 # Ensure you have your API key set in your environment per the README: https://github.com/openai/openai-python#usage
@@ -248,8 +248,7 @@ for i in range(n_clusters):
 ```
 
 #### Insight
-The movie reviews can be clearly classified into 2 categories: positive reviews (cluster 3) and negative reviews (cluster 2, 1, 0, & 4). With the 2d/3d visuals, we can zoom in and see that the orange postive reviews can be distinguished from the other three negative review clusters. 
-
+The Rotten Tomatoes movie reviews can be clearly classified into 2 categories: positive reviews (cluster 3) and negative reviews (cluster 2, 1, 0, & 4). With the 2d/3d visuals, we can zoom in and see that the orange postive reviews can be distinguished from the other three negative review clusters. 
 ## Further Exploration
 - Other use cases and their application
 
