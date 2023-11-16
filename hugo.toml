@@ -63,9 +63,9 @@ pygmentsUseClasses = true
     weight = 10
 
   [[menu.main]]
-    identifier = "voice'log"
-    name = "Voice'log"
-    url = "/vlog/"
+    identifier = "bodymindsoul"
+    name = "Body, Mind, Soul"
+    url = "/bodymindsoul/"
     weight = 20
 
 [minify]
