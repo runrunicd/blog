@@ -25,7 +25,9 @@ The ultimate goal is to become familiar with the framework of leveraging embeddi
 ## What do you need to know about embeddings?
 - An embedding is a vector (list) of floating point numbers, representing a text string.
 - The distance between two embeddings (vectors) measures their relatedness. The smaller the distance, the higher they are related, vice versa.
-- t-SNE, which stands for t-distributed Stochastic Neighbor Embedding, is a machine learning algorithm used primarily for the task of dimensionality reduction, particularly well-suited for the visualization of high-dimensional datasets. It was developed by Laurens van der Maaten and Geoffrey Hinton in 2008. Here's a brief overview of what t-SNE does and how it work.
+- Dimensionality reduction methods: 
+    - t-SNE, a non-linear dimension reduction method, which stands for t-distributed Stochastic Neighbor Embedding. The ML algorithm calculates the similarity in both high dimensional sapce and low dimensional space, then the similarity difference in both spaces is minimized using an optimization method, for instance, gradient descend. It was developed by Laurens van der Maaten and Geoffrey Hinton in 2008. Here's a brief overview of what t-SNE does and how it work.
+    - PCA, a linear dimension reduction method, where the data in high dimensional space is mapped linearly into low dimensional space while maximizing the variance of the data.
 
 ## Use Cases
 ### Clustering
@@ -129,45 +131,83 @@ To visualize the clusters, transform the embeddings of high-dimension 1536 to 2D
 from sklearn.manifold import TSNE
 import matplotlib
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 tsne = TSNE(n_components=2, perplexity=15, random_state=42, init="random", learning_rate=200)
 vis_dims2 = tsne.fit_transform(matrix)
 
-x = [x for x, y in vis_dims2]
-y = [y for x, y in vis_dims2]
+# Define the color map for the clusters
+color_map = {
+    0: 'firebrick',         # Cluster 0
+    1: 'orangered',  # Cluster 1
+    2: 'gold',      # Cluster 2
+    3: 'limegreen',       # Cluster 3
+    4: 'maroon'       # Cluster 4
+}
 
-for category, color in enumerate(["gold", "turquoise", "darkorange", "purple"]):
-    xs = np.array(x)[df['cluster'] == category]
-    ys = np.array(y)[df['cluster'] == category]
-    plt.scatter(xs, ys, color=color, alpha=0.3)
+# Map the cluster labels to colors
+df['color'] = df['cluster'].map(color_map)
 
-    avg_x = xs.mean()
-    avg_y = ys.mean()
+# Convert cluster to a categorical type with the specified order
+df['cluster'] = pd.Categorical(df['cluster'], categories=[0, 1, 2, 3, 4], ordered=True)
 
-    plt.scatter(avg_x, avg_y, marker="x", color=color, s=100)
-    
-plt.title("Clusters identified visualized in language 2d using t-SNE")
+# Create a DataFrame from the t-SNE results
+df_tsne = pd.DataFrame({'Dimension 1': vis_dims2[:, 0], 
+                        'Dimension 2': vis_dims2[:, 1], 
+                        'Cluster': df['cluster'],
+                        'Color': df['color']})
+
+# Create the 2D scatter plot using Plotly Express
+fig = px.scatter(
+    df_tsne, x='Dimension 1', y='Dimension 2',
+    color='Cluster', labels={'Cluster': 'Cluster'},
+    title='Clusters identified visualized in 2D using t-SNE',
+    color_discrete_map=color_map # Apply the color map
+)
+
+# Define the category orders for the legend to make it discrete
+fig.update_traces(marker=dict(size=3), selector=dict(mode='markers'))  # Adjust marker size
+fig.update_layout(
+    legend=dict(
+        traceorder='normal',
+        title_text='Cluster',
+        title_font=dict(size=14)
+    )
+)
+
+
+# Show the plot
+fig.show()
 ```
 <br></br>
-#### 2D visualization
+#### 2D visualization from t-SNE
 We can identify the clusters by the differently colored dense cores.  
-![2D visualization of clusters](images/clusters_2d.png#center)
+![2D visualization of clusters](images/2d_tsne.png#center)
 <br></br>
 
-#### 3D visualization
-Sometimes, it's helpful to identify clusters in 3D visualization as there might be more than two factors critical in classifying the move reviews.
+#### 2D visualization from PCA
+It's exploratory, so it's worthwhile to see PCA 2D results too. We label positive reviews green and negative red.
+![2D visualization of clusters](images/2d_pca.png#center)
+<br></br>
+
+#### 3D visualization from t-SNE
+Sometimes, it's helpful to identify clusters in 3D visualization as there might be more than two factors critical in classifying the move reviews. You may wonder why are the movie reviews in each cluster grouped together? When we go on to the next section, we may see that the green cluster is for positive reviews and the other four are quite negative.
+<br></br>
+
 {{< plotly >}}
-<iframe width="100%" height="550" name="iframe", src="iframes/clusters_3d.html"></iframe>
+<iframe width="100%" height="550" name="iframe", src="iframes/3d_tsne.html"></iframe>
 {{< /plotly >}}
 
 <br></br>
 
+
+
 #### Cluster theme
 Furthermore, we can leverage the model text-davinci-003 to summarize the theme for each cluster of movie reviews on Rotten Tomatoes.
 
-Let’s summarize the clusters, the mean sentiment, and the themes. Cluster 2 is very negative, expressing disappointment with the movies. In contrast, cluster 3 is very positive, with praise. Finally, clusters 1, 0, and 4 are closer to negative reviews but are not as disappointed as cluster 2.
+Let’s summarize the clusters, the mean sentiment, and the theme. Cluster 2 is very negative, expressing disappointment with the movies. In contrast, cluster 3 is very positive, with praise. Finally, clusters 1, 0, and 4 are closer to negative reviews but are not as disappointed as cluster 2.
 
-| Cluster | Mean | Theme |
+| Cluster | Mean Sentiment | Theme |
 |---------|------|------|
 | 2  | 0.010241 | Disappointed with the quality of the movie. |
 | 1  | 0.091311 | The reviews are all negative and critical of the movie.
