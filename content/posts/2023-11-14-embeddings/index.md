@@ -191,7 +191,7 @@ It's exploratory, so it's worthwhile to see PCA 2D results too. We label positiv
 <br></br>
 
 #### 3D visualization from t-SNE
-Sometimes, it's helpful to identify clusters in 3D visualization as there might be more than two factors critical in classifying the move reviews. You may wonder why are the movie reviews in each cluster grouped together? When we go on to the next section, we may see that the green cluster is for positive reviews and the other four are quite negative.
+Sometimes, it's helpful to identify clusters in 3D visualization as there might be more than two major forces critical in classifying the move reviews. You may wonder why are the movie reviews in each cluster grouped together? When we go on to the next section, we may see that the green cluster is for positive reviews and the other four are quite negative.
 <br></br>
 
 {{< plotly >}}
