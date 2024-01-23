@@ -19,10 +19,10 @@ Let&amp;rsquo;s start exploring:</description>
     
     <item>
       <title>Learning Notes on Large Language Model (Dumping Knowledge for Now)</title>
-      <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</link>
+      <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-notes/</link>
       <pubDate>Tue, 01 Aug 2023 13:33:00 -0700</pubDate>
       
-      <guid>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</guid>
+      <guid>https://runrunicd.github.io/blog/posts/2023-08-28-llm-notes/</guid>
       <description>Messy &amp;hellip; Introduction to Large Language Model Auto-regressive transformers are pretrained on an extensive corpus of self-supervised data, followed by alignment with human preferences via techniques such as Reinforcement Learning with Human Feedback (RLHF).
 Training methodology is simple but is limited to a few players with high computational requirements
 Public pretrained LLM

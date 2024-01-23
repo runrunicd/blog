@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://runrunicd.github.io/blog/categories/ai/ml/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Everything about RAG</title>
+      <link>https://runrunicd.github.io/blog/posts/2024-01-22-rag/</link>
+      <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://runrunicd.github.io/blog/posts/2024-01-22-rag/</guid>
+      <description>Introduction Imagine you are Harry Potter. You want to find everything about the fantastic beast, Niffler, to prepare for your exam. You&amp;rsquo;re led to the library and wish to retrieve all relevant pieces of information from the books and visualize Niffler, for example, the beast likes shiny objects, is british, and chubby and cute. Then, all you need is RAG :)
+RAG stands for &amp;ldquo;Retrieval-Augmented Generation.&amp;rdquo; This approach can be particularly powerful for tasks like question answering, where it&amp;rsquo;s important to provide responses that are not only fluent and coherent (thanks to the generative model) but also deeply grounded in specific information retrieved from the text corpus.</description>
+    </item>
+    
+    <item>
       <title>Embeddings Use Cases</title>
       <link>https://runrunicd.github.io/blog/posts/2023-11-14-embeddings/</link>
       <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
@@ -28,10 +38,10 @@ Take, for example, the process of scaling a business from the ground up. It ofte
     
     <item>
       <title>Learning Notes on Large Language Model (Dumping Knowledge for Now)</title>
-      <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</link>
+      <link>https://runrunicd.github.io/blog/posts/2023-08-28-llm-notes/</link>
       <pubDate>Tue, 01 Aug 2023 13:33:00 -0700</pubDate>
       
-      <guid>https://runrunicd.github.io/blog/posts/2023-08-28-llm-reading-notes/</guid>
+      <guid>https://runrunicd.github.io/blog/posts/2023-08-28-llm-notes/</guid>
       <description>Messy &amp;hellip; Introduction to Large Language Model Auto-regressive transformers are pretrained on an extensive corpus of self-supervised data, followed by alignment with human preferences via techniques such as Reinforcement Learning with Human Feedback (RLHF).
 Training methodology is simple but is limited to a few players with high computational requirements
 Public pretrained LLM
