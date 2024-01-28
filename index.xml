@@ -24,8 +24,8 @@ Self-realization involves being grounded and independent, breaking free from pas
       <pubDate>Mon, 22 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://runrunicd.github.io/blog/posts/2024-01-22-rag/</guid>
-      <description>Introduction Imagine you are Harry Potter. You want to find everything about the fantastic beast, Niffler, to prepare for your exam. You&amp;rsquo;re led to the library and wish to retrieve all relevant pieces of information from the books, for example, the beast likes shiny objects, is british, and chubby and cute, and visualize Niffler. Then, all you need is RAG :)
-RAG stands for &amp;ldquo;Retrieval-Augmented Generation.&amp;rdquo; This approach can be particularly powerful for tasks like question answering, where it&amp;rsquo;s important to provide responses that are not only fluent and coherent (thanks to the generative model) but also deeply grounded in specific information retrieved from the text corpus.</description>
+      <description>Introduction Following the same philosophy, I aim to first learn about the RAG system by constructing a generic version and then applying optimization techniques. This method will assist me in understanding the pain points, which will in turn guide our brainstorming toward viable applications. As someone who is not very tech-savvy, my primary goal is to grasp the mental model underlying the RAG system.
+Imagine you are Harry Potter. You want to find everything about the fantastic beast, Niffler, to prepare for your exam.</description>
     </item>
     
     <item>
