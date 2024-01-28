@@ -7,6 +7,8 @@ categories: ["AI/ML"]
 ---
 
 ## Introduction
+Following the same philosophy, I aim to first learn about the RAG system by constructing a generic version and then applying optimization techniques. This method will assist me in understanding the pain points, which will in turn guide our brainstorming toward viable applications. As someone who is not very tech-savvy, my primary goal is to grasp the mental model underlying the RAG system.
+
 Imagine you are Harry Potter. You want to find everything about the fantastic beast, Niffler, to prepare for your exam. You're led to the library and wish to retrieve all relevant pieces of information from the books, for example, the beast likes shiny objects, is british, and chubby and cute, and visualize Niffler. Then, all you need is RAG :)
 
 RAG stands for "Retrieval-Augmented Generation." This approach can be particularly powerful for tasks like question answering, where it's important to provide responses that are not only fluent and coherent (thanks to the generative model) but also deeply grounded in specific information retrieved from the text corpus. The idea behind RAG is to combine the strengths of two types of models: a retrieval model and a generative model.
@@ -33,10 +35,7 @@ Here's an animated overview of a RAG system. More theoretical and techical detai
 ![rag](images/rag_gif.gif#center)
 {{< embedded_citation >}} Source: https://huggingface.co/blog/ray-rag {{< /embedded_citation >}}
 
-Now, we have an overview of the RAG system, which is a good starting point. Next, we'll delve into technical details and discuss how to enhance and improve your RAG system. Some of the development techniques we'll cover are sourced from public resources, including
-- [Llamaindex's talk](https://www.youtube.com/watch?v=TRjq7t2Ms5I) on how to build production-ready RAG apps
-- [Langchain explianed in 13 mins](https://www.youtube.com/watch?v=aywZrzNaKjs)
-- [Medium blog: first intro to complex RAG](https://medium.com/enterprise-rag/a-first-intro-to-complex-rag-retrieval-augmented-generation-a8624d70090f)
+Now, we have an overview of the RAG system, which is a good starting point. Next, we'll delve into technical details and discuss how to enhance and improve your RAG system.
 
 
 ## Implementation of RAG system
@@ -120,9 +119,12 @@ Why we feel excited about RAG?
 RAG, the orchestration of a retriever and a generator by connecting to factual data, reduces hallucination. For business specific tasks, running RAG on domain-specific documents generate responses of higher quality. 
 
 
-## Tools
-- Langchain
-- LlamaIndex
+## Reference
+Some of the development techniques we'll cover are sourced from public resources, including
+- [Llamaindex's talk](https://www.youtube.com/watch?v=TRjq7t2Ms5I) on how to build production-ready RAG apps
+- [Langchain explianed in 13 mins](https://www.youtube.com/watch?v=aywZrzNaKjs)
+- [Medium blog: first intro to complex RAG](https://medium.com/enterprise-rag/a-first-intro-to-complex-rag-retrieval-augmented-generation-a8624d70090f)
+- [MangoDB Vector Search](https://github.com/sujee/mongodb-atlas-vector-search/)
 
 ## Projects
 WIP, stay tuned.
